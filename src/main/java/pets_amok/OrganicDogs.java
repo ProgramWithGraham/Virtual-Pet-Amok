@@ -1,5 +1,7 @@
 package pets_amok;
 
-public class OrganicDogs {
+public interface OrganicDogs {
+    void cageCleanliness();
 
+    void wasteInCage();
 }

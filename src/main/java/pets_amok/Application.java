@@ -1,26 +1,24 @@
 package pets_amok;
+
 import java.util.*;
 
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner animals = new Scanner(System.in);
+        VirtualPetShelter omgPets = new VirtualPetShelter();
+
         System.out.println(
                 "\n Welcome to the grand ole world of Virtual Pets. Your goal is to keep your pets satisfied with Food, Water and Play. The higher the number the better your pet is doing. \n");
-        VirtualPet superPet = new VirtualPet("Krypto", "The Super dog");
-        VirtualPet superPet2 = new VirtualPet("Tommy", "Green Power dog");
-        VirtualPet superPet3 = new VirtualPet("Billy", "Blue Power dog");
-        VirtualPet superPet4 = new VirtualPet("Kimberly", "Pink Power dog");
-        VirtualPet superPet5 = new VirtualPet("Jason", "Red Power dog");
-        VirtualPet superPet6 = new VirtualPet("Trini", "Yellow Power dog");
+        Organic superPet = new Organic("Krypto", "The Super dog");
+        Robo superPet2 = new Robo("Tommy", "Green Power dog");
 
-        VirtualPetShelter omgPets = new VirtualPetShelter();
         omgPets.addPet(superPet);
         omgPets.addPet(superPet2);
-        omgPets.addPet(superPet3);
-        omgPets.addPet(superPet4);
-        omgPets.addPet(superPet5);
-        omgPets.addPet(superPet6);
+        // omgPets.addPet(superPet3);
+        // omgPets.addPet(superPet4);
+        // omgPets.addPet(superPet5);
+        // omgPets.addPet(superPet6);
 
         omgPets.showPets();
         superPet.printUserInstructions();
@@ -53,8 +51,8 @@ public class Application {
                 System.out.println("What is your description of your pet in three words?");
                 String describeThePet = animals.nextLine();
                 System.out.println(" You have admitted a pet.");
-                VirtualPet superPet7 = new VirtualPet(namingThePet, describeThePet);
-                omgPets.addPet(superPet7);
+                Organic newPet = new Organic(namingThePet, describeThePet);
+                omgPets.addPet(newPet);
                 System.out.println("");
             } else if (userInput == 6) { // End the program
                 System.out.println("");

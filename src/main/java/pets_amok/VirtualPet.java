@@ -1,23 +1,27 @@
 package pets_amok;
 
-public class VirtualPet {
+public abstract class VirtualPet {
     private String petName;
     private String petDescription;
+    private int petHealth;
     private int hungerLevel;
     private int thirstLevel;
-    public int boredomLevel;
+    private int boredomLevel;
 
     public VirtualPet(String petName, String petDescription) {
         this.petName = petName;
         this.petDescription = petDescription;
+        this.petHealth = 85;
         this.hungerLevel = 75;
         this.thirstLevel = 75;
         this.boredomLevel = 75;
     }
 
-    public VirtualPet(String petName, String petDescription, int hungerLevel, int thirstLevel, int boredomLevel) {
+    public VirtualPet(String petName, String petDescription, int petHealth, int hungerLevel, int thirstLevel,
+            int boredomLevel) {
         this.petName = petName;
         this.petDescription = petDescription;
+        this.petHealth = petHealth;
         this.hungerLevel = hungerLevel;
         this.thirstLevel = thirstLevel;
         this.boredomLevel = boredomLevel;
@@ -40,6 +44,14 @@ public class VirtualPet {
 
     public void setPetName(String petName) {
         this.petName = petName;
+    }
+
+    public int getPetHealth() {
+        return petHealth;
+    }
+
+    public void setPetHealth(int petHealth) {
+        this.petHealth = petHealth;
     }
 
     public String getPetDescription() {
@@ -96,10 +108,13 @@ public class VirtualPet {
         return petDetails;
     }
 
+    public abstract int happiness();
+
     public void tick() {
         this.hungerLevel -= 2;
         this.thirstLevel -= 2;
         this.boredomLevel -= 2;
         // increase this calling objects thirst, hunger, boredom
     }
+
 }

@@ -1,5 +1,7 @@
 package pets_amok;
 
-public class OrganicCats {
+public interface OrganicCats {
+    void litterBoxCleanliness();
 
+    void wasteInLitterBox();
 }

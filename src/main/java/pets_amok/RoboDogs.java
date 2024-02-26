@@ -1,5 +1,7 @@
 package pets_amok;
 
-public class RoboDogs {
+public interface RoboDogs {
+    void oilLevel();
 
+    void maintenance();
 }

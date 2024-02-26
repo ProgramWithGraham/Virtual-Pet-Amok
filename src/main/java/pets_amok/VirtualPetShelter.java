@@ -4,7 +4,7 @@ import java.util.*;
 
 public class VirtualPetShelter {
 
-    ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
+    protected ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
 
     public VirtualPetShelter() {
     }
@@ -65,6 +65,24 @@ public class VirtualPetShelter {
         }
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    public void increaseAllOil() {
+
+    }
+
+    public void increaseAllMaintance() {
+
+    }
+
+    public void decreaseWasteInCage() {
+
+    }
+
+    public void decreaseWasteInLitterBox() {
+
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////
     public void tickAllPets() {
         for (VirtualPet pet : pets)
             pet.tick();
