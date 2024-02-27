@@ -27,7 +27,10 @@ public class VirtualPetShelter {
 
     public void feedAll() {
         for (VirtualPet pet : pets)
-            pet.giveFood();
+            if (pet instanceof Organic) {
+                Organic organicPet = (Organic) pet;
+                organicPet.giveFood();
+            }
     }
 
     public void giveAllWater() {
