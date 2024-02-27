@@ -10,8 +10,8 @@ public class Application {
 
         System.out.println(
                 "\n Welcome to the grand ole world of Virtual Pets. Your goal is to keep your pets satisfied with Food, Water and Play. The higher the number the better your pet is doing. \n");
-        Organic superPet = new Organic("Krypto", "The Super dog");
-        Robo superPet2 = new Robo("Tommy", "Green Power dog");
+        Organic superPet = new Organic("Krypto", "The Super dog", 0);
+        Robo superPet2 = new Robo("Tommy", "Green Power dog", 0);
 
         omgPets.addPet(superPet);
         omgPets.addPet(superPet2);
@@ -51,8 +51,8 @@ public class Application {
                 System.out.println("What is your description of your pet in three words?");
                 String describeThePet = animals.nextLine();
                 System.out.println(" You have admitted a pet.");
-                Organic newPet = new Organic(namingThePet, describeThePet);
-                omgPets.addPet(newPet);
+                // Organic newPet = new Organic(namingThePet, describeThePet);
+                // omgPets.addPet(newPet);
                 System.out.println("");
             } else if (userInput == 6) { // End the program
                 System.out.println("");

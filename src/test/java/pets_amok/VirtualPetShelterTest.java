@@ -11,8 +11,8 @@ public class VirtualPetShelterTest {
     @BeforeEach
     public void setup() {
         omgPets = new VirtualPetShelter();
-        VirtualPet superPet = new VirtualPet("Krypto", "The Super dog");
-        omgPets.addPet(superPet);
+        //VirtualPet superPet = new VirtualPet("Krypto", "The Super dog");
+       // omgPets.addPet(superPet);
     }
 
     @Test

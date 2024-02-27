@@ -7,8 +7,9 @@ public abstract class VirtualPet {
     private int hungerLevel;
     private int thirstLevel;
     private int boredomLevel;
+    private int happiness;
 
-    public VirtualPet(String petName, String petDescription) {
+    public VirtualPet(String petName, String petDescription, int petHealth) {
         this.petName = petName;
         this.petDescription = petDescription;
         this.petHealth = 85;
@@ -108,13 +109,21 @@ public abstract class VirtualPet {
         return petDetails;
     }
 
-    public abstract int happiness();
+    public abstract void happiness();
 
     public void tick() {
         this.hungerLevel -= 2;
         this.thirstLevel -= 2;
         this.boredomLevel -= 2;
         // increase this calling objects thirst, hunger, boredom
+    }
+
+    public int getHappiness() {
+        return happiness;
+    }
+
+    public void setHappiness(int happiness) {
+        this.happiness = happiness;
     }
 
 }

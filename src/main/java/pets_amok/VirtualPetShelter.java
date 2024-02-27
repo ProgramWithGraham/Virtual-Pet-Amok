@@ -70,7 +70,7 @@ public class VirtualPetShelter {
 
     }
 
-    public void increaseAllMaintance() {
+    public void increaseAllMaintenance() {
 
     }
 
@@ -79,6 +79,10 @@ public class VirtualPetShelter {
     }
 
     public void decreaseWasteInLitterBox() {
+
+    }
+
+    public void walkAllDogs() {
 
     }
 
