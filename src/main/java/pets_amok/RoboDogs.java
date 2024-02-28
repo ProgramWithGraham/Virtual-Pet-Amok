@@ -1,6 +1,6 @@
 package pets_amok;
 
-public class RoboDogs extends Robo implements Dog {
+public class RoboDogs extends Robo implements Dogs {
 
     int oilLevel = 80;
     int maintenance = 90;

@@ -27,6 +27,17 @@ public abstract class Robo extends VirtualPet {
         this.maintenance = maintenance;
     }
 
+    
+    public int giveOil() {
+        this.oilLevel += 10;
+        return this.oilLevel;
+    }
+
+    public int improveMaintenance() {
+        this.maintenance += 10;
+        return this.maintenance;
+    }
+
     @Override
     public void tick() {
         this.oilLevel -= 2;

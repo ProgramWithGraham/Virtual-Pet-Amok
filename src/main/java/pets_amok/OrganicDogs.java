@@ -1,6 +1,6 @@
 package pets_amok;
 
-public class OrganicDogs extends VirtualPet implements Dog {
+public class OrganicDogs extends VirtualPet implements Dogs {
     public OrganicDogs(String petName, String petDescription, int petHealth) {
         super(petName, petDescription, petHealth);
 

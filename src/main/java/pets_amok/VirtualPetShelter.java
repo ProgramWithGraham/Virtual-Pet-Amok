@@ -73,11 +73,19 @@ public class VirtualPetShelter {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     public void increaseAllOil() {
-
+        for (VirtualPet pet : pets)
+            if (pet instanceof Robo) {
+                Robo organicPet = (Robo) pet;
+                organicPet.giveOil();
+            }
     }
 
     public void increaseAllMaintenance() {
-
+        for (VirtualPet pet : pets)
+            if (pet instanceof Robo) {
+                Robo organicPet = (Robo) pet;
+                organicPet.improveMaintenance();
+            }
     }
 
     public void decreaseWasteInCage() {
@@ -99,7 +107,6 @@ public class VirtualPetShelter {
     }
 
     public void showPets() {
-        System.out.println("Name  | Description      | Hunger    | Thirst | Boredom ");
         for (VirtualPet pet : pets) {
             // System.out.println(pet.getPetName() + " | " + pet.getPetDescription() + "
             // |\t" + pet.getHungerLevel()

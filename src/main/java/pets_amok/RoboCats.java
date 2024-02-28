@@ -1,8 +1,7 @@
 package pets_amok;
 
-public class RoboCats extends VirtualPet implements Cat {
-  
-    
+public class RoboCats extends VirtualPet implements Cats {
+
     int oilLevel = 80;
     int maintenance = 90;
 
