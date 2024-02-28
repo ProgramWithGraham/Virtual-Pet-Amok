@@ -9,16 +9,18 @@ public abstract class VirtualPet {
     private int boredomLevel;
     private int happiness;
 
-    public VirtualPet(String petName, String petDescription, int petHealth) {
+    public VirtualPet(String petName, String petDescription, int petHealth, int happiness) {
         this.petName = petName;
         this.petDescription = petDescription;
         this.petHealth = 85;
         this.hungerLevel = 75;
         this.thirstLevel = 75;
         this.boredomLevel = 75;
+        this.happiness = 85;
     }
 
-    public VirtualPet(String petName, String petDescription, int petHealth, int hungerLevel, int thirstLevel,
+    public VirtualPet(String petName, String petDescription, int petHealth, int happiness, int hungerLevel,
+            int thirstLevel,
             int boredomLevel) {
         this.petName = petName;
         this.petDescription = petDescription;
@@ -26,6 +28,7 @@ public abstract class VirtualPet {
         this.hungerLevel = hungerLevel;
         this.thirstLevel = thirstLevel;
         this.boredomLevel = boredomLevel;
+        this.happiness = happiness;
     }
 
     public void printUserInstructions() {
