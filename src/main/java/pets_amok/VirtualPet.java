@@ -7,7 +7,7 @@ public abstract class VirtualPet {
     private int boredomLevel;
     private int happinessLevel;
 
-    public VirtualPet(String petName, String petDescription) {
+    public VirtualPet(String petName, String petDescription, int petHealth) {
         this.petName = petName;
         this.petDescription = petDescription;
         this.petHealth = 85;

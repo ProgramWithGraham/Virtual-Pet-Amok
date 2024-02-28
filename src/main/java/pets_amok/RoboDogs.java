@@ -25,25 +25,24 @@ public class RoboDogs extends Robo implements Dogs {
         this.maintenance = maintenance;
     }
 
-    @Override
-    public void walkDog(){
-setHappinessLevel(getHappinessLevel() + 2);
-
-}
+    public int goForWalk() {
+        setHappinessLevel(getHappinessLevel() + 5);
     }
-//     @Override
-//     public void oilLevel() {
-//         oilLevel += 5;
-//     }
 
-//     @Override
-//     public void maintenance() {
-//         maintenance += 5;
-//     }
-
-//     @Override
-//     public void happiness() {
-//         oilLevel -= 2;
-//         maintenance -= 2;
-//     }
 }
+// @Override
+// public void oilLevel() {
+// oilLevel += 5;
+// }
+
+// @Override
+// public void maintenance() {
+// maintenance += 5;
+// }
+
+// @Override
+// public void happiness() {
+// oilLevel -= 2;
+// maintenance -= 2;
+// }
+

@@ -89,16 +89,31 @@ public class VirtualPetShelter {
     }
 
     public void decreaseWasteInCage() {
-
+        for (VirtualPet pet : pets)
+            if (pet instanceof Organic) {
+                Organic organicPet = (Organic) pet;
+                organicPet.giveOil();
+            }
     }
 
     public void decreaseWasteInLitterBox() {
-
+        for (VirtualPet pet : pets)
+            if (pet instanceof Organic) {
+                Organic organicPet = (Organic) pet;
+                organicPet.giveOil();
+            }
     }
 
     public void walkAllDogs() {
-
+        for (VirtualPet pet : pets) {
+            if (pet instanceof OrganicDogs) {
+                ((OrganicDogs) pet).goForWalk();
+            } else if (pet instanceof RoboDogs) {
+                ((RoboDogs) pet).goForWalk();
+            }
+        }
     }
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////
     public void tickAllPets() {
