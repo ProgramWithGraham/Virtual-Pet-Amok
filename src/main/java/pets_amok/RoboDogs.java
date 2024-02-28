@@ -1,12 +1,12 @@
 package pets_amok;
 
-public class RoboDogs extends VirtualPet implements Dog {
+public class RoboDogs extends Robo implements Dog {
 
     int oilLevel = 80;
     int maintenance = 90;
 
     public RoboDogs(String petName, String petDescription, int petHealth) {
-        super(petName, petDescription, petHealth);
+        super(petName, petDescription, petHealth, happiness);
     }
 
     public int getOilLevel() {
@@ -26,18 +26,24 @@ public class RoboDogs extends VirtualPet implements Dog {
     }
 
     @Override
-    public void oilLevel() {
-        oilLevel += 5;
-    }
+    public void walkDog(){
+setHappinessLevel(getHappinessLevel() + 2);
 
-    @Override
-    public void maintenance() {
-        maintenance += 5;
+}
     }
+//     @Override
+//     public void oilLevel() {
+//         oilLevel += 5;
+//     }
 
-    @Override
-    public void happiness() {
-        oilLevel -= 2;
-        maintenance -= 2;
-    }
+//     @Override
+//     public void maintenance() {
+//         maintenance += 5;
+//     }
+
+//     @Override
+//     public void happiness() {
+//         oilLevel -= 2;
+//         maintenance -= 2;
+//     }
 }

@@ -24,6 +24,13 @@ public class OrganicDogs extends VirtualPet implements Dog {
     }
 
     @Override
+    public void cleanCage() {
+        System.out.println("You have cleaned " + petName);
+        cageCleanliness += 5;
+
+    }
+
+    @Override
     public void cageCleanliness() {
         cageCleanliness += 5;
     }

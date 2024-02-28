@@ -7,19 +7,17 @@ public abstract class VirtualPet {
     private int hungerLevel;
     private int thirstLevel;
     private int boredomLevel;
-    private int happiness;
+    private int happinessLevel;
 
-    public VirtualPet(String petName, String petDescription, int petHealth, int happiness) {
+    public VirtualPet(String petName, String petDescription, int petHealth, int happinessLevel) {
         this.petName = petName;
         this.petDescription = petDescription;
         this.petHealth = 85;
-        this.hungerLevel = 75;
-        this.thirstLevel = 75;
         this.boredomLevel = 75;
-        this.happiness = 85;
+        this.happinessLevel = 85;
     }
 
-    public VirtualPet(String petName, String petDescription, int petHealth, int happiness, int hungerLevel,
+    public VirtualPet(String petName, String petDescription, int petHealth, int happinessLevel, int hungerLevel,
             int thirstLevel,
             int boredomLevel) {
         this.petName = petName;
@@ -28,7 +26,7 @@ public abstract class VirtualPet {
         this.hungerLevel = hungerLevel;
         this.thirstLevel = thirstLevel;
         this.boredomLevel = boredomLevel;
-        this.happiness = happiness;
+        this.happinessLevel = happinessLevel;
     }
 
     public void printUserInstructions() {
@@ -102,7 +100,9 @@ public abstract class VirtualPet {
 
     public int playFetch() {
         this.boredomLevel += 10;
-        return this.boredomLevel;
+        this.happinessLevel += 10;
+        return this.boredomLevel + this.happinessLevel;
+
     }
 
     @Override
@@ -121,12 +121,12 @@ public abstract class VirtualPet {
         // increase this calling objects thirst, hunger, boredom
     }
 
-    public int getHappiness() {
-        return happiness;
+    public int getHappinessLevel() {
+        return happinessLevel;
     }
 
-    public void setHappiness(int happiness) {
-        this.happiness = happiness;
+    public void setHappinessLevel(int happinessLevel) {
+        this.happinessLevel = happinessLevel;
     }
 
 }
