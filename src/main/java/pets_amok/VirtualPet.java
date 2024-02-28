@@ -4,12 +4,10 @@ public abstract class VirtualPet {
     private String petName;
     private String petDescription;
     private int petHealth;
-    private int hungerLevel;
-    private int thirstLevel;
     private int boredomLevel;
     private int happinessLevel;
 
-    public VirtualPet(String petName, String petDescription, int petHealth, int happinessLevel) {
+    public VirtualPet(String petName, String petDescription) {
         this.petName = petName;
         this.petDescription = petDescription;
         this.petHealth = 85;
@@ -17,14 +15,10 @@ public abstract class VirtualPet {
         this.happinessLevel = 85;
     }
 
-    public VirtualPet(String petName, String petDescription, int petHealth, int happinessLevel, int hungerLevel,
-            int thirstLevel,
-            int boredomLevel) {
+    public VirtualPet(String petName, String petDescription, int petHealth, int boredomLevel, int happinessLevel) {
         this.petName = petName;
         this.petDescription = petDescription;
         this.petHealth = petHealth;
-        this.hungerLevel = hungerLevel;
-        this.thirstLevel = thirstLevel;
         this.boredomLevel = boredomLevel;
         this.happinessLevel = happinessLevel;
     }
@@ -64,38 +58,12 @@ public abstract class VirtualPet {
         this.petDescription = petDescription;
     }
 
-    public int getHungerLevel() {
-        return this.hungerLevel;
-    }
-
-    public void setHungerLevel(int hungerLevel) {
-        this.hungerLevel = hungerLevel;
-    }
-
-    public int getThirstLevel() {
-        return this.thirstLevel;
-    }
-
-    public void setThirstLevel(int thirstLevel) {
-        this.thirstLevel = thirstLevel;
-    }
-
     public int getBoredomLevel() {
         return this.boredomLevel;
     }
 
     public void setBoredomLevel(int boredomLevel) {
         this.boredomLevel = boredomLevel;
-    }
-
-    public int giveFood() {
-        this.hungerLevel += 10;
-        return this.hungerLevel;
-    }
-
-    public int giveWater() {
-        this.thirstLevel += 10;
-        return this.thirstLevel;
     }
 
     public int playFetch() {
@@ -107,19 +75,19 @@ public abstract class VirtualPet {
 
     @Override
     public String toString() {
-        String petDetails = this.petName + ", " + this.petDescription + " - stats are:  " + "Hunger: "
-                + this.hungerLevel + "  Thirst: " + this.thirstLevel + "  Boredom: " + this.boredomLevel;
+        String petDetails = this.petName + ", " + this.petDescription + " - stats are:  " + "  Boredom: "
+                + this.boredomLevel;
         return petDetails;
     }
 
     public abstract void happiness();
 
-    public void tick() {
-        this.hungerLevel -= 2;
-        this.thirstLevel -= 2;
-        this.boredomLevel -= 2;
-        // increase this calling objects thirst, hunger, boredom
-    }
+    public abstract void tick();
+
+    // public void tick() {
+    // this.boredomLevel -= 2;
+    // // // increase this calling objects thirst, hunger, boredom
+    // }
 
     public int getHappinessLevel() {
         return happinessLevel;

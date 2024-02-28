@@ -2,10 +2,40 @@ package pets_amok;
 
 public abstract class Robo extends VirtualPet {
 
-    private int oilLevel = 80;
-    private int maintenance = 90;
+    private int oilLevel;
+    private int maintenance;
 
-    void oilLevel();
+    public Robo(String petName, String petDescription) {
+        super(petName, petDescription);
+        this.oilLevel = 80;
+        this.maintenance = 90;
+    }
 
-    void maintenance();
+    public int getOilLevel() {
+        return this.oilLevel;
+    }
+
+    public void setOilLevel(int oilLevel) {
+        this.oilLevel = oilLevel;
+    }
+
+    public int getMaintenance() {
+        return this.maintenance;
+    }
+
+    public void setMaintenance(int maintenance) {
+        this.maintenance = maintenance;
+    }
+
+    @Override
+    public void tick() {
+        this.oilLevel -= 2;
+        this.maintenance -= 2;
+        if (oilLevel - maintenance >= 15) {
+            setPetHealth(getPetHealth() - 25);
+            if (getPetHealth() < 65) {
+                setHappinessLevel(getHappinessLevel() - 10);
+            }
+        }
+    }
 }
