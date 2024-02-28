@@ -4,7 +4,7 @@ import java.util.*;
 
 public class VirtualPetShelter {
 
-    protected ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
+    private ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
 
     public VirtualPetShelter() {
     }
@@ -25,7 +25,7 @@ public class VirtualPetShelter {
         this.pets.add(addedPet);
     }
 
-    public void feedAll() {
+    public void feedOrganic() {
         for (VirtualPet pet : pets)
             if (pet instanceof Organic) {
                 Organic organicPet = (Organic) pet;
@@ -33,9 +33,12 @@ public class VirtualPetShelter {
             }
     }
 
-    public void giveAllWater() {
+    public void giveOrganicWater() {
         for (VirtualPet pet : pets)
-            pet.giveWater();
+            if (pet instanceof Organic) {
+                Organic organicPet = (Organic) pet;
+                organicPet.giveWater();
+            }
     }
 
     public void playWithSelectedPet(String petName) {
@@ -49,7 +52,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public void findPet() {
+    public void listPets() {
         for (VirtualPet pet : pets) {
             System.out.println(pet.getPetName() + " " + pet.getPetDescription());
         }
@@ -70,11 +73,19 @@ public class VirtualPetShelter {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     public void increaseAllOil() {
-
+        for (VirtualPet pet : pets)
+            if (pet instanceof Robo) {
+                Robo organicPet = (Robo) pet;
+                organicPet.giveOil();
+            }
     }
 
     public void increaseAllMaintenance() {
-
+        for (VirtualPet pet : pets)
+            if (pet instanceof Robo) {
+                Robo organicPet = (Robo) pet;
+                organicPet.improveMaintenance();
+            }
     }
 
     public void decreaseWasteInCage() {
@@ -96,10 +107,10 @@ public class VirtualPetShelter {
     }
 
     public void showPets() {
-        System.out.println("Name  | Description      | Hunger    | Thirst | Boredom ");
         for (VirtualPet pet : pets) {
-            System.out.println(pet.getPetName() + " | " + pet.getPetDescription() + "  |\t" + pet.getHungerLevel()
-                    + "   |\t" + pet.getThirstLevel() + "    |\t" + pet.getBoredomLevel());
+            // System.out.println(pet.getPetName() + " | " + pet.getPetDescription() + "
+            // |\t" + pet.getHungerLevel()
+            // + " |\t" + pet.getThirstLevel() + " |\t" + pet.getBoredomLevel());
         }
     }
 }

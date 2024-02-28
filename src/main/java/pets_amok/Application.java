@@ -31,14 +31,14 @@ public class Application {
                 omgPets.giveAllWater();
                 System.out.println("\nYou have given all pets some water.\n");
             } else if (userInput == 3) { // This is used to increase the boredom level for only the selected pet
-                omgPets.findPet();
+                omgPets.listPets();
                 animals.nextLine();
                 System.out.println("\nPlease type the pet name from the above list that you want to play with");
                 String chooseAPet = animals.nextLine();
                 omgPets.playWithSelectedPet(chooseAPet);
                 System.out.println("\nYou have played with " + chooseAPet + "\n");
             } else if (userInput == 4) { // This is to remove a pet from the shelter
-                omgPets.findPet();
+                omgPets.listPets();
                 animals.nextLine();
                 System.out.println("\nPlease type the pet name from the above list that you want to adopt");
                 String petToRemove = animals.nextLine();
