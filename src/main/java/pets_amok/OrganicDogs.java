@@ -33,6 +33,7 @@ public class OrganicDogs extends Organic implements Dogs {
         return this.wasteInCage;
     }
 
+    @Override
     public void cageCleanliness() {
         wasteInCage -= 5;
         cageCleanliness += 5;
@@ -50,6 +51,6 @@ public class OrganicDogs extends Organic implements Dogs {
 
     @Override
     public void tick() {
+        this.wasteInCage -= 2;
     }
-
 }

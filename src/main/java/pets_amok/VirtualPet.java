@@ -7,7 +7,7 @@ public abstract class VirtualPet {
     private int boredomLevel;
     private int happinessLevel;
 
-    public VirtualPet(String petName, String petDescription, int petHealth) {
+    public VirtualPet(String petName, String petDescription, int petHealth, int boredomLevel, int happinessLevel) {
         this.petName = petName;
         this.petDescription = petDescription;
         this.petHealth = 85;
@@ -15,13 +15,13 @@ public abstract class VirtualPet {
         this.happinessLevel = 85;
     }
 
-    public VirtualPet(String petName, String petDescription, int petHealth, int boredomLevel, int happinessLevel) {
-        this.petName = petName;
-        this.petDescription = petDescription;
-        this.petHealth = petHealth;
-        this.boredomLevel = boredomLevel;
-        this.happinessLevel = happinessLevel;
-    }
+    // public VirtualPet(String petName, String petDescription, int petHealth, int boredomLevel, int happinessLevel) {
+    //     this.petName = petName;
+    //     this.petDescription = petDescription;
+    //     this.petHealth = petHealth;
+    //     this.boredomLevel = boredomLevel;
+    //     this.happinessLevel = happinessLevel;
+    // }
 
     public void printUserInstructions() {
         System.out.println(" ");

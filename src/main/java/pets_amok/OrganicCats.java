@@ -2,12 +2,13 @@ package pets_amok;
 
 public class OrganicCats extends Organic implements Cats {
 
-    int wasteInLitterBox = 15;
-    int litterBoxCleanliness = 85;
+    private int wasteInLitterBox;
+    private int litterBoxCleanliness;
 
     public OrganicCats(String petName, String petDescription, int petHealth) {
-        super(petName, petDescription, 0);
-
+        super(petName);
+        this.wasteInLitterBox = 15;
+        this.litterBoxCleanliness = 85;
     }
 
     public int getWasteInLitterBox() {
@@ -26,7 +27,6 @@ public class OrganicCats extends Organic implements Cats {
         this.litterBoxCleanliness = litterBoxCleanliness;
     }
 
-    
     public void litterBoxCleanliness() {
         wasteInLitterBox -= 5;
         litterBoxCleanliness += 5;
@@ -38,4 +38,12 @@ public class OrganicCats extends Organic implements Cats {
         litterBoxCleanliness -= 5;
     }
 
+    @Override
+    public void happiness() {
+    }
+
+    @Override
+    public void tick() {
+        this.wasteInLitterBox -= 2;
+    }
 }

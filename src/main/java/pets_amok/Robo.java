@@ -1,14 +1,13 @@
 package pets_amok;
 
 public abstract class Robo extends VirtualPet {
-
-    private int oilLevel;
     private int maintenance;
+    private int oilLevel;
 
-    public Robo(String petName, String petDescription) {
-        super(petName, petDescription, petHealth);
-        this.oilLevel = 80;
+    public Robo(String petName, String petDescription, int maintenance, int oilLevel, int happinessLevel) {
+        super(petName, petDescription, maintenance, oilLevel, happinessLevel);
         this.maintenance = 90;
+        this.oilLevel = 80;
     }
 
     public int getOilLevel() {
