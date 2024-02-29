@@ -1,11 +1,15 @@
 package pets_amok;
 
-public class OrganicDogs extends VirtualPet implements Dogs {
-    public OrganicDogs(String petName, String petDescription, int petHealth) {
-        super(petName, petDescription, petHealth);
+public class OrganicDogs extends Organic implements Dogs {
 
-    int wasteInCage = 15;
-    int cageCleanliness = 85;
+    private int wasteInCage;
+    private int cageCleanliness;
+
+    public OrganicDogs(String petName, String petDescription, int petHealth, int wasteInCage, int cageCleanliness) {
+        super(petName, petDescription, 0);
+        this.wasteInCage = 25;
+        this.cageCleanliness = 85;
+    }
 
     public int getWasteInCage() {
         return this.wasteInCage;
@@ -23,19 +27,19 @@ public class OrganicDogs extends VirtualPet implements Dogs {
         this.cageCleanliness = cageCleanliness;
     }
 
-    @Override
-    public void cleanCage() {
-        System.out.println("You have cleaned " + petName);
-        cageCleanliness += 5;
-
+    public int goForWalk() {
+        this.wasteInCage -= 5;
+        setHappinessLevel(getHappinessLevel() + 5);
+        return this.wasteInCage;
     }
 
     @Override
     public void cageCleanliness() {
+        wasteInCage -= 5;
         cageCleanliness += 5;
+
     }
 
-    @Override
     public void wasteInCage() {
         wasteInCage += 5;
         cageCleanliness -= 5;
@@ -45,4 +49,8 @@ public class OrganicDogs extends VirtualPet implements Dogs {
     public void happiness() {
     }
 
+    @Override
+    public void tick() {
+        this.wasteInCage -= 2;
+    }
 }
