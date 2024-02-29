@@ -4,31 +4,32 @@ import java.util.*;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner animals = new Scanner(System.in);
         VirtualPetShelter omgPets = new VirtualPetShelter();
 
         System.out.println(
                 "\n Welcome to the grand ole world of Virtual Pets. Your goal is to keep your pets satisfied with Food, Water and Play. The higher the number the better your pet is doing. \n");
-        Organic superPet = new Organic("Krypto", "The Super dog", 0);
-        Robo superPet2 = new Robo("Tommy", "Green Power dog", 0);
+        OrganicDogs superPet = new OrganicDogs("Krypto", "The Super dog", 0);
+        RoboDogs superPet2 = new RoboDogs("Tommy", "Green Power dog", 0);
+        OrganicCats superPet3 = new OrganicCats("Kimberly", "Pink Power cat", 0);
+        RoboCats superPet4 = new RoboCats("Billy", "Blue Power Cat", 0);
 
         omgPets.addPet(superPet);
         omgPets.addPet(superPet2);
-        // omgPets.addPet(superPet3);
-        // omgPets.addPet(superPet4);
-        // omgPets.addPet(superPet5);
-        // omgPets.addPet(superPet6);
+        omgPets.addPet(superPet3);
+        omgPets.addPet(superPet4);
+       
 
         omgPets.showPets();
         superPet.printUserInstructions();
         while (true) {
             int userInput = animals.nextInt();
             if (userInput == 1) { // This is used to increase the Hunger level for all pets
-                omgPets.feedAll();
+                omgPets.feedOrganic();
                 System.out.println("\nYou have given all pets some food.\n");
             } else if (userInput == 2) { // This is used to increase the Thirst level for all pets
-                omgPets.giveAllWater();
+                omgPets.giveOrganicWater();
                 System.out.println("\nYou have given all pets some water.\n");
             } else if (userInput == 3) { // This is used to increase the boredom level for only the selected pet
                 omgPets.listPets();

@@ -1,6 +1,6 @@
 package pets_amok;
 
-public class RoboCats extends VirtualPet implements Cats {
+public class RoboCats extends Robo implements Cats {
 
     int oilLevel = 80;
     int maintenance = 90;
@@ -25,12 +25,10 @@ public class RoboCats extends VirtualPet implements Cats {
         this.maintenance = maintenance;
     }
 
-    @Override
     public void oilLevel() {
         oilLevel += 5;
     }
 
-    @Override
     public void maintenance() {
         maintenance += 5;
     }

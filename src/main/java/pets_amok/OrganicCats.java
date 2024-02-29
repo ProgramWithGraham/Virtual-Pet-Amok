@@ -1,12 +1,12 @@
 package pets_amok;
 
-public class OrganicCats extends VirtualPet implements Cats {
+public class OrganicCats extends Organic implements Cats {
 
     int wasteInLitterBox = 15;
     int litterBoxCleanliness = 85;
 
     public OrganicCats(String petName, String petDescription, int petHealth) {
-        super(petName, petDescription, petHealth);
+        super(petName, petDescription, 0);
 
     }
 
@@ -26,14 +26,13 @@ public class OrganicCats extends VirtualPet implements Cats {
         this.litterBoxCleanliness = litterBoxCleanliness;
     }
 
-    @Override
+    
     public void litterBoxCleanliness() {
         wasteInLitterBox -= 5;
         litterBoxCleanliness += 5;
 
     }
 
-    @Override
     public void wasteInLitterBox() {
         wasteInLitterBox += 5;
         litterBoxCleanliness -= 5;

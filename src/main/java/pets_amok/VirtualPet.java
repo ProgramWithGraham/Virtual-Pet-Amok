@@ -26,12 +26,16 @@ public abstract class VirtualPet {
     public void printUserInstructions() {
         System.out.println(" ");
         System.out.println("Please enter a number input from the following options:");
-        System.out.println(" 1. Give your pets some Food");
-        System.out.println(" 2. Give your pets some Water");
-        System.out.println(" 3. Play with your a selected virtual pet");
-        System.out.println(" 4. Adopt a pet");
-        System.out.println(" 5. Admit a pet");
-        System.out.println(" 6. End the program");
+        System.out.println(" 1. Give your Organic pets some Food");
+        System.out.println(" 2. Give your Organic pets some Water");
+        System.out.println(" 3. Give your Robo pets some oil");
+        System.out.println(" 4. Give your Robo pets some Water");
+        System.out.println(" 5. Play with your a selected virtual pet");
+        System.out.println(" 6. Adopt a pet");
+        System.out.println(" 7. Admit a pet");
+        System.out.println(" 8. Clean dog crates");
+        System.out.println(" 9. Clean cat litter boxes");
+        System.out.println(" 0. End the program");
     }
 
     public String getPetName() {

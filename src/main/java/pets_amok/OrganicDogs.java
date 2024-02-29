@@ -1,14 +1,14 @@
 package pets_amok;
 
-public class OrganicDogs extends VirtualPet implements Dogs {
+public class OrganicDogs extends Organic implements Dogs {
 
-    private int wasteInCage = 25;
-    private int cageCleanliness = 85;
+    private int wasteInCage;
+    private int cageCleanliness;
 
     public OrganicDogs(String petName, String petDescription, int petHealth, int wasteInCage, int cageCleanliness) {
-        super(petName, petDescription, petHealth);
-        this.wasteInCage = wasteInCage;
-        this.cageCleanliness = cageCleanliness;
+        super(petName, petDescription, 0);
+        this.wasteInCage = 25;
+        this.cageCleanliness = 85;
     }
 
     public int getWasteInCage() {
@@ -33,14 +33,12 @@ public class OrganicDogs extends VirtualPet implements Dogs {
         return this.wasteInCage;
     }
 
-    @Override
     public void cageCleanliness() {
         wasteInCage -= 5;
         cageCleanliness += 5;
 
     }
 
-    @Override
     public void wasteInCage() {
         wasteInCage += 5;
         cageCleanliness -= 5;
