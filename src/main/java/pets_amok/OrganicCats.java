@@ -28,6 +28,7 @@ public class OrganicCats extends VirtualPet implements Cats {
 
     @Override
     public void litterBoxCleanliness() {
+        wasteInLitterBox -= 5;
         litterBoxCleanliness += 5;
 
     }

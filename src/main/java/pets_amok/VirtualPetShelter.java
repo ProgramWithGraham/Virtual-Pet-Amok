@@ -52,6 +52,13 @@ public class VirtualPetShelter {
         }
     }
 
+    public void playWithAll() {
+        for (VirtualPet pet : pets) {
+            pet.playFetch();
+        }
+
+    }
+
     public void listPets() {
         for (VirtualPet pet : pets) {
             System.out.println(pet.getPetName() + " " + pet.getPetDescription());
@@ -71,8 +78,7 @@ public class VirtualPetShelter {
         }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    public void increaseAllOil() {
+    public void giveRobPetsOil() {
         for (VirtualPet pet : pets)
             if (pet instanceof Robo) {
                 Robo organicPet = (Robo) pet;
@@ -80,7 +86,7 @@ public class VirtualPetShelter {
             }
     }
 
-    public void increaseAllMaintenance() {
+    public void fixRoboPetsMaintenance() {
         for (VirtualPet pet : pets)
             if (pet instanceof Robo) {
                 Robo organicPet = (Robo) pet;
@@ -88,19 +94,19 @@ public class VirtualPetShelter {
             }
     }
 
-    public void decreaseWasteInCage() {
+    public void cleanCages() {
         for (VirtualPet pet : pets)
-            if (pet instanceof Organic) {
-                Organic organicPet = (Organic) pet;
-                organicPet.giveOil();
+            if (pet instanceof OrganicDogs) {
+                OrganicDogs organicPet = (OrganicDogs) pet;
+                organicPet.cageCleanliness();
             }
     }
 
-    public void decreaseWasteInLitterBox() {
+    public void cleanLitterBox() {
         for (VirtualPet pet : pets)
-            if (pet instanceof Organic) {
-                Organic organicPet = (Organic) pet;
-                organicPet.giveOil();
+            if (pet instanceof OrganicCats) {
+                OrganicCats organicPet = (OrganicCats) pet;
+                organicPet.litterBoxCleanliness();
             }
     }
 
@@ -114,8 +120,6 @@ public class VirtualPetShelter {
         }
     }
 
-
-    //////////////////////////////////////////////////////////////////////////////////////////////
     public void tickAllPets() {
         for (VirtualPet pet : pets)
             pet.tick();

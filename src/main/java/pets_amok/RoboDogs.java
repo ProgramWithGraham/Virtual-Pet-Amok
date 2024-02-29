@@ -25,7 +25,7 @@ public class RoboDogs extends Robo implements Dogs {
         this.maintenance = maintenance;
     }
 
-    public int goForWalk() {
+    public void goForWalk() {
         setHappinessLevel(getHappinessLevel() + 5);
     }
 
