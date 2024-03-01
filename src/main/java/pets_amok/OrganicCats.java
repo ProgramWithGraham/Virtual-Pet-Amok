@@ -45,6 +45,17 @@ public class OrganicCats extends Organic implements Cats {
 
     @Override
     public void tick() {
+        this.hungerLevel -= 2;
+        this.thirstLevel -= 2;
+        setBoredomLevel(getBoredomLevel() - 2);
+        setHappinessLevel(getHappinessLevel() - 1);
+        if (hungerLevel - thirstLevel >= 15) {
+            setPetHealth(getPetHealth() - 25);
+            if (getPetHealth() < 65) {
+                setHappinessLevel(getHappinessLevel() - 10);
+            }
+
+        }
         this.wasteInLitterBox += 2;
         this.litterBoxCleanliness -= 2;
         if (litterBoxCleanliness - wasteInLitterBox <= 15) {

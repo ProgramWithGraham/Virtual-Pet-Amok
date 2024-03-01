@@ -79,6 +79,8 @@ public class Application {
                 break;
             }
             omgPets.tickAllPets();
+            superPet.tick();
+            superPet2.tick();
             omgPets.showPets();
             superPet.printUserInstructions();
         }

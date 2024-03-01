@@ -122,7 +122,11 @@ public class VirtualPetShelter {
 
     public void tickAllPets() {
         for (VirtualPet pet : pets)
-            pet.tick();
+            if (pet instanceof Organic) {
+                ((Organic) pet).tick();
+            } else if (pet instanceof Robo) {
+                ((Robo) pet).tick();
+            }
     }
 
     public void showPets() {

@@ -1,8 +1,8 @@
 package pets_amok;
 
 public abstract class Organic extends VirtualPet {
-    private int hungerLevel;
-    private int thirstLevel;
+    protected int hungerLevel;
+    protected int thirstLevel;
 
     public Organic(String petName, String petDescription, int happinessLevel,
             int petHealth, int boredomLevel, int hungerLevel, int thirstLevel) {
@@ -38,18 +38,18 @@ public abstract class Organic extends VirtualPet {
         return this.thirstLevel;
     }
 
-    @Override
-    public void tick() {
-        this.hungerLevel -= 2;
-        this.thirstLevel -= 2;
-        setBoredomLevel(getBoredomLevel() - 2);
-        setHappinessLevel(getHappinessLevel() - 1);
-        if (hungerLevel - thirstLevel >= 15) {
-            setPetHealth(getPetHealth() - 25);
-            if (getPetHealth() < 65) {
-                setHappinessLevel(getHappinessLevel() - 10);
-            }
+    // @Override
+    // public void tick() {
+    //     // this.hungerLevel -= 2;
+    //     // this.thirstLevel -= 2;
+    //     // setBoredomLevel(getBoredomLevel() - 2);
+    //     // setHappinessLevel(getHappinessLevel() - 1);
+    //     // if (hungerLevel - thirstLevel >= 15) {
+    //     //     setPetHealth(getPetHealth() - 25);
+    //     //     if (getPetHealth() < 65) {
+    //     //         setHappinessLevel(getHappinessLevel() - 10);
+    //     //     }
 
-        }
-    }
+    //     // }
+    // }
 }
