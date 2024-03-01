@@ -90,13 +90,6 @@ public abstract class VirtualPet {
 
     public abstract void tick();
 
-    public abstract void showPetStatus();
-
-    // public void tick() {
-    // this.boredomLevel -= 2;
-    // // // increase this calling objects thirst, hunger, boredom
-    // }
-
     public int getHappinessLevel() {
         return happinessLevel;
     }

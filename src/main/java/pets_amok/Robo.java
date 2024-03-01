@@ -41,7 +41,7 @@ public abstract class Robo extends VirtualPet {
     public void tick() {
         this.oilLevel -= 2;
         this.maintenance -= 2;
-        if (oilLevel - maintenance >= 15) {
+        if (oilLevel - maintenance <= 15) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {
                 setHappinessLevel(getHappinessLevel() - 10);

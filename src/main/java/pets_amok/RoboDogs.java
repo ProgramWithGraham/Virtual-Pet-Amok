@@ -21,7 +21,4 @@ public class RoboDogs extends Robo implements Dogs {
     public void happiness() {
     }
 
-    @Override
-    public void showPetStatus() {
-    }
 }

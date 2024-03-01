@@ -11,8 +11,4 @@ public class RoboCats extends Robo implements Cats {
     public void happiness() {
     }
 
-    @Override
-    public void showPetStatus() {
-    }
-
 }
