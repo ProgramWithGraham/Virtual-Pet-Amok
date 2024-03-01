@@ -14,7 +14,7 @@ public class Application {
         RoboDogs superPet2 = new RoboDogs("Tommy", "Green Power dog", 0);
         OrganicCats superPet3 = new OrganicCats("Kimberly", "Pink Power cat", 0);
         RoboCats superPet4 = new RoboCats("Billy", "Blue Power Cat", 0);
-
+5
         omgPets.addPet(superPet);
         omgPets.addPet(superPet2);
         omgPets.addPet(superPet3);
