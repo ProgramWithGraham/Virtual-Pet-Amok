@@ -5,8 +5,9 @@ public class OrganicDogs extends Organic implements Dogs {
     private int wasteInCage;
     private int cageCleanliness;
 
-    public OrganicDogs(String petName, String petDescription, int petHealth, int wasteInCage, int cageCleanliness) {
-        super(petName, petDescription, petHealth, wasteInCage, cageCleanliness);
+    public OrganicDogs(String petName, String petDescription, int hungerLevel, int thirstLevel, int happinessLevel,
+            int petHealth, int boredomLevel, int wasteInCage, int cageCleanliness) {
+        super(petName, petDescription, happinessLevel, petHealth, boredomLevel, hungerLevel, thirstLevel);
         this.wasteInCage = 25;
         this.cageCleanliness = 85;
     }

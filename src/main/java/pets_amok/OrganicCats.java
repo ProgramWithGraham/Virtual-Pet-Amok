@@ -6,8 +6,8 @@ public class OrganicCats extends Organic implements Cats {
     private int litterBoxCleanliness;
 
     public OrganicCats(String petName, String petDescription, int hungerLevel, int thirstLevel, int happinessLevel,
-            int wasteInLitterBox, int litterBoxCleanliness) {
-        super(petName, petDescription, petHealth, wasteInLitterBox, litterBoxCleanliness);
+            int petHealth, int boredomLevel, int wasteInLitterBox, int litterBoxCleanliness) {
+        super(petName, petDescription, happinessLevel, petHealth, boredomLevel, hungerLevel, thirstLevel);
         this.wasteInLitterBox = 15;
         this.litterBoxCleanliness = 85;
     }

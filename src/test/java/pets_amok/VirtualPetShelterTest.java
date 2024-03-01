@@ -11,12 +11,12 @@ public class VirtualPetShelterTest {
     @BeforeEach
     public void setup() {
         VirtualPetShelter omgPets = new VirtualPetShelter();
-       // OrganicDogs superPet = new OrganicDogs("Krypto", "The Super dog", 0);
-        RoboDogs superPet2 = new RoboDogs("Tommy", "Green Power dog", 0);
-        OrganicCats superPet3 = new OrganicCats("Kimberly", "Pink Power cat", 0);
-        RoboCats superPet4 = new RoboCats("Billy", "Blue Power Cat", 0);
+        // OrganicDogs superPet = new OrganicDogs("Krypto", "The Super dog", 0);
+        RoboDogs superPet2 = new RoboDogs("Tommy", "Green Power dog", 0, 0, 0, 0, 0);
+        OrganicCats superPet3 = new OrganicCats("Kimberly", "Pink Power Dog", 0, 0, 0, 0, 0, 0, 0);
+        RoboCats superPet4 = new RoboCats("Billy", "Blue Power Cat", 0, 0, 0, 0, 0);
 
-       // omgPets.addPet(superPet);
+        // omgPets.addPet(superPet);
         omgPets.addPet(superPet2);
         omgPets.addPet(superPet3);
         omgPets.addPet(superPet4);
