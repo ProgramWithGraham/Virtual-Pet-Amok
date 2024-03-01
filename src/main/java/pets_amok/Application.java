@@ -9,17 +9,17 @@ public class Application {
         VirtualPetShelter omgPets = new VirtualPetShelter();
 
         System.out.println(
-                "\n Welcome to the grand ole world of Virtual Pets. Your goal is to keep your pets satisfied with Food, Water and Play. The higher the number the better your pet is doing. \n");
-        OrganicDogs superPet = new OrganicDogs("Krypto", "The Super dog", 0);
+                "\n Welcome to the grand ole world of Virtual Pets. Your goal is to keep your pets satisfied. The higher the number the better your pet is doing. \n");
+
+        OrganicDogs superPet = new OrganicDogs("Krypto", "The Super Dog", 0, 0, 0);
         RoboDogs superPet2 = new RoboDogs("Tommy", "Green Power dog", 0);
-        OrganicCats superPet3 = new OrganicCats("Kimberly", "Pink Power cat", 0);
+        OrganicCats superPet3 = new OrganicCats("Kimberly", "Pink Power cat", 0,0,0);
         RoboCats superPet4 = new RoboCats("Billy", "Blue Power Cat", 0);
 
         omgPets.addPet(superPet);
         omgPets.addPet(superPet2);
         omgPets.addPet(superPet3);
         omgPets.addPet(superPet4);
-       
 
         omgPets.showPets();
         superPet.printUserInstructions();

@@ -5,8 +5,9 @@ public class OrganicCats extends Organic implements Cats {
     private int wasteInLitterBox;
     private int litterBoxCleanliness;
 
-    public OrganicCats(String petName, String petDescription, int petHealth) {
-        super(petName);
+    public OrganicCats(String petName, String petDescription, int hungerLevel, int thirstLevel, int happinessLevel,
+            int wasteInLitterBox, int litterBoxCleanliness) {
+        super(petName, petDescription, petHealth, wasteInLitterBox, litterBoxCleanliness);
         this.wasteInLitterBox = 15;
         this.litterBoxCleanliness = 85;
     }
@@ -44,7 +45,8 @@ public class OrganicCats extends Organic implements Cats {
 
     @Override
     public void showPetStatus() {
-        System.out.println(" LiterBox Cleanliness: " + (setLitterBoxCleanliness(getlitterBoxCleanliness())));
+        // System.out.println(" LiterBox Cleanliness: " +
+        // (setLitterBoxCleanliness(getlitterBoxCleanliness())));
     }
 
     @Override

@@ -6,7 +6,7 @@ public class OrganicDogs extends Organic implements Dogs {
     private int cageCleanliness;
 
     public OrganicDogs(String petName, String petDescription, int petHealth, int wasteInCage, int cageCleanliness) {
-        super(petName, petDescription, 0);
+        super(petName, petDescription, petHealth, wasteInCage, cageCleanliness);
         this.wasteInCage = 25;
         this.cageCleanliness = 85;
     }
@@ -58,5 +58,9 @@ public class OrganicDogs extends Organic implements Dogs {
                 setHappinessLevel(getHappinessLevel() - 10);
             }
         }
+    }
+
+    @Override
+    public void showPetStatus() {
     }
 }

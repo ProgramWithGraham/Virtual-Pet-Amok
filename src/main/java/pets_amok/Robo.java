@@ -5,7 +5,7 @@ public abstract class Robo extends VirtualPet {
     private int oilLevel;
 
     public Robo(String petName, String petDescription, int maintenance, int oilLevel, int happinessLevel) {
-        super(petName, petDescription, maintenance, oilLevel, happinessLevel);
+        super(petName, petDescription, happinessLevel);
         this.maintenance = 90;
         this.oilLevel = 80;
     }

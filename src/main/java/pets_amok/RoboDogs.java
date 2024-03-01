@@ -3,8 +3,7 @@ package pets_amok;
 public class RoboDogs extends Robo implements Dogs {
 
     public RoboDogs(String petName, String petDescription, int petHealth) {
-        super(petName, petDescription, petHealth, happiness);
-    }
+super(petName, petDescription, petHealth, petHealth, petHealth) ;   }
 
     public void goForWalk() {
         setHappinessLevel(getHappinessLevel() + 5);
@@ -17,5 +16,9 @@ public class RoboDogs extends Robo implements Dogs {
 
     @Override
     public void happiness() {
+    }
+
+    @Override
+    public void showPetStatus() {
     }
 }
