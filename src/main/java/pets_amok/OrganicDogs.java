@@ -56,7 +56,7 @@ public class OrganicDogs extends Organic implements Dogs {
         this.thirstLevel -= 2;
         setBoredomLevel(getBoredomLevel() - 2);
         setHappinessLevel(getHappinessLevel() - 1);
-        if (hungerLevel - thirstLevel <= 15) {
+        if (hungerLevel - thirstLevel >= 15) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {
                 setHappinessLevel(getHappinessLevel() - 10);
