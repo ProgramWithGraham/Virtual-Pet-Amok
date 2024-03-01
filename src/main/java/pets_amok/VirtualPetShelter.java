@@ -125,6 +125,15 @@ public class VirtualPetShelter {
             pet.tick();
     }
 
+    public void showAllStatuses(){
+        System.out.println("All available pet's status: ");
+        for (VirtualPet pet : pets){
+            pet.showPetStatus();
+            System.out.println();
+        }
+
+    }
+
     public void showPets() {
         for (VirtualPet pet : pets) {
             // System.out.println(pet.getPetName() + " | " + pet.getPetDescription() + "

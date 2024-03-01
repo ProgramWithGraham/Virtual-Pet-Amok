@@ -43,7 +43,18 @@ public class OrganicCats extends Organic implements Cats {
     }
 
     @Override
+    public void showPetStatus() {
+        System.out.println(" LiterBox Cleanliness: " + (setLitterBoxCleanliness(getlitterBoxCleanliness())));
+    }
+
+    @Override
     public void tick() {
         this.wasteInLitterBox -= 2;
+        if (litterBoxCleanliness - wasteInLitterBox >= 15) {
+            setPetHealth(getPetHealth() - 25);
+            if (getPetHealth() < 65) {
+                setHappinessLevel(getHappinessLevel() - 10);
+            }
+        }
     }
 }

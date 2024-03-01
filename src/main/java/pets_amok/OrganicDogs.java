@@ -52,5 +52,11 @@ public class OrganicDogs extends Organic implements Dogs {
     @Override
     public void tick() {
         this.wasteInCage -= 2;
+        if (cageCleanliness - wasteInCage >= 15) {
+            setPetHealth(getPetHealth() - 25);
+            if (getPetHealth() < 65) {
+                setHappinessLevel(getHappinessLevel() - 10);
+            }
+        }
     }
 }

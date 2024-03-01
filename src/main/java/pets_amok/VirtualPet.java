@@ -87,6 +87,8 @@ public abstract class VirtualPet {
     public abstract void happiness();
 
     public abstract void tick();
+    public abstract void showPetStatus();
+
 
     // public void tick() {
     // this.boredomLevel -= 2;
