@@ -122,14 +122,44 @@ public class VirtualPetShelter {
 
     public void tickAllPets() {
         for (VirtualPet pet : pets)
-            pet.tick();
+            if (pet instanceof Organic) {
+                ((Organic) pet).tick();
+            } else if (pet instanceof Robo) {
+                ((Robo) pet).tick();
+            }
     }
 
     public void showPets() {
         for (VirtualPet pet : pets) {
-            // System.out.println(pet.getPetName() + " | " + pet.getPetDescription() + "
-            // |\t" + pet.getHungerLevel()
-            // + " |\t" + pet.getThirstLevel() + " |\t" + pet.getBoredomLevel());
+            if (pet instanceof OrganicCats) {
+                System.out.println(" Organic Cats");
+                System.out.println(pet.getPetName() + " :" + pet.getPetDescription() + " : Health " + pet.getPetHealth()
+                        + " Happiness: " + pet.getHappinessLevel() + " Boredom: " + pet.getBoredomLevel()
+                        + " Hunger: " + ((Organic) pet).getHungerLevel()
+                        + " Thirst: " + ((Organic) pet).getThirstLevel()
+                        + " Waste in Litter Box: " + ((OrganicCats) pet).getWasteInLitterBox()
+                        + " Litter Box cleanliness: " + ((OrganicCats) pet).getLitterBoxCleanliness());
+
+            } else if (pet instanceof OrganicDogs) {
+                System.out.println(" Organic Dog");
+                System.out.println(pet.getPetName() + ":" + pet.getPetDescription() + ": Health " + pet.getPetHealth()
+                        + " Happiness: " + pet.getHappinessLevel() + " Boredom: " + pet.getBoredomLevel()
+                        + " Hunger: " + ((Organic) pet).getHungerLevel()
+                        + " Thirst: " + ((Organic) pet).getThirstLevel()
+                        + " Waste in Cages: " + ((OrganicDogs) pet).getWasteInCage()
+                        + " Cage cleanliness " + ((OrganicDogs) pet).getCageCleanliness());
+
+            } else if (pet instanceof Robo) {
+                System.out.println(" Robo Pets");
+                System.out.println(pet.getPetName() + " :" + pet.getPetDescription() + " : Health " + pet.getPetHealth()
+                        + " Happiness: " + pet.getHappinessLevel() + " Boredom: " + pet.getBoredomLevel()
+                        + " Maintenance: " + ((Robo) pet).getMaintenance()
+                        + " Oil level: " + ((Robo) pet).getOilLevel());
+
+            }
+
         }
+
     }
+
 }

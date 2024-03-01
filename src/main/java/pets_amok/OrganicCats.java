@@ -5,8 +5,9 @@ public class OrganicCats extends Organic implements Cats {
     private int wasteInLitterBox;
     private int litterBoxCleanliness;
 
-    public OrganicCats(String petName, String petDescription, int petHealth) {
-        super(petName);
+    public OrganicCats(String petName, String petDescription, int hungerLevel, int thirstLevel, int happinessLevel,
+            int petHealth, int boredomLevel, int wasteInLitterBox, int litterBoxCleanliness) {
+        super(petName, petDescription, happinessLevel, petHealth, boredomLevel, hungerLevel, thirstLevel);
         this.wasteInLitterBox = 15;
         this.litterBoxCleanliness = 85;
     }
@@ -44,6 +45,24 @@ public class OrganicCats extends Organic implements Cats {
 
     @Override
     public void tick() {
-        this.wasteInLitterBox -= 2;
+        this.hungerLevel -= 2;
+        this.thirstLevel -= 2;
+        setBoredomLevel(getBoredomLevel() - 2);
+        setHappinessLevel(getHappinessLevel() - 1);
+        if (hungerLevel - thirstLevel >= 15) {
+            setPetHealth(getPetHealth() - 25);
+            if (getPetHealth() < 65) {
+                setHappinessLevel(getHappinessLevel() - 10);
+            }
+
+        }
+        this.wasteInLitterBox += 2;
+        this.litterBoxCleanliness -= 2;
+        if (litterBoxCleanliness - wasteInLitterBox <= 15) {
+            setPetHealth(getPetHealth() - 25);
+            if (getPetHealth() < 65) {
+                setHappinessLevel(getHappinessLevel() - 10);
+            }
+        }
     }
 }
