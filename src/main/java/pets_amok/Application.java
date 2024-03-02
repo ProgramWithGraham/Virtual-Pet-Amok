@@ -25,10 +25,10 @@ public class Application {
         superPet.printUserInstructions();
         while (true) {
             int userInput = animals.nextInt();
-            if (userInput == 1) { // This is used to increase the Hunger level for all pets
+            if (userInput == 1) { // This is used to increases the Hunger and Happiness for Organic pets
                 omgPets.feedOrganic();
                 System.out.println("\nYou have given your Organic pets some food.\n");
-            } else if (userInput == 2) { // This is used to increase the Thirst level for all pets
+            } else if (userInput == 2) { // This is used to increases the Thirst and Happiness for Organic pets
                 omgPets.giveOrganicWater();
                 System.out.println("\nYou have given your Organic pets some water.\n");
             } else if (userInput == 3) { // This is used to increase the oil level for Robo pets

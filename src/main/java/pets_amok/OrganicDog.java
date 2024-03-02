@@ -37,17 +37,15 @@ public class OrganicDog extends Organic implements Dog {
 
     @Override
     public void cageCleanliness() {
-        wasteInCage -= 5;
-        cageCleanliness += 5;
+        wasteInCage -= 20;
+        cageCleanliness += 40;
         setHappinessLevel(getHappinessLevel() + 5);
         setPetHealth(getPetHealth() + 5);
-
     }
 
     public void wasteInCage() {
         wasteInCage += 5;
         cageCleanliness -= 5;
-       
     }
 
     @Override
@@ -56,13 +54,7 @@ public class OrganicDog extends Organic implements Dog {
         this.thirstLevel -= 2;
         setBoredomLevel(getBoredomLevel() - 2);
         setHappinessLevel(getHappinessLevel() - 1);
-        if (hungerLevel - thirstLevel >= 15) {
-            setPetHealth(getPetHealth() - 25);
-            if (getPetHealth() < 65) {
-                setHappinessLevel(getHappinessLevel() - 10);
-            }
-
-        }
+        setPetHealth(getPetHealth() - 3);
         wasteInCage();
         if (cageCleanliness - wasteInCage <= 15) {
             setPetHealth(getPetHealth() - 25);
