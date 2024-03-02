@@ -4,10 +4,9 @@ public abstract class Robo extends VirtualPet {
     private int maintenance;
     private int oilLevel;
 
-    public Robo(String petName, String petDescription, int happinessLevel,
-            int petHealth, int boredomLevel, int maintenance, int oilLevel) {
+    public Robo(String petName, String petDescription) {
         super(petName, petDescription);
-        this.maintenance = 90;
+        this.maintenance = 80;
         this.oilLevel = 80;
     }
 
@@ -29,11 +28,15 @@ public abstract class Robo extends VirtualPet {
 
     public int giveOil() {
         this.oilLevel += 10;
+        setBoredomLevel(getBoredomLevel() + 5);
+        setHappinessLevel(getHappinessLevel() + 5);
         return this.oilLevel;
     }
 
     public int improveMaintenance() {
         this.maintenance += 10;
+        setBoredomLevel(getBoredomLevel() + 5);
+        setHappinessLevel(getHappinessLevel() + 5);
         return this.maintenance;
     }
 
@@ -41,6 +44,8 @@ public abstract class Robo extends VirtualPet {
     public void tick() {
         this.oilLevel -= 2;
         this.maintenance -= 2;
+        setBoredomLevel(getBoredomLevel() - 2);
+        setHappinessLevel(getHappinessLevel() - 1);
         if (oilLevel - maintenance >= 15) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {

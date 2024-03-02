@@ -1,15 +1,14 @@
 package pets_amok;
 
-public class OrganicDogs extends Organic implements Dogs {
+public class OrganicDog extends Organic implements Dog {
 
     private int wasteInCage;
     private int cageCleanliness;
 
-    public OrganicDogs(String petName, String petDescription, int hungerLevel, int thirstLevel, int happinessLevel,
-            int petHealth, int boredomLevel, int wasteInCage, int cageCleanliness) {
-        super(petName, petDescription, happinessLevel, petHealth, boredomLevel, hungerLevel, thirstLevel);
-        this.wasteInCage = 25;
-        this.cageCleanliness = 85;
+    public OrganicDog(String petName, String petDescription) {
+        super(petName, petDescription);
+        this.wasteInCage = 15;
+        this.cageCleanliness = 80;
     }
 
     public int getWasteInCage() {
@@ -28,26 +27,27 @@ public class OrganicDogs extends Organic implements Dogs {
         this.cageCleanliness = cageCleanliness;
     }
 
-    public int goForWalk() {
-        this.wasteInCage -= 5;
+    public void goForWalk() {
+        this.wasteInCage -= 10;
         setHappinessLevel(getHappinessLevel() + 5);
-        return this.wasteInCage;
+        setBoredomLevel(getBoredomLevel() - 5);
+        setPetHealth(getPetHealth() + 5);
+
     }
 
     @Override
     public void cageCleanliness() {
         wasteInCage -= 5;
         cageCleanliness += 5;
+        setHappinessLevel(getHappinessLevel() + 5);
+        setPetHealth(getPetHealth() + 5);
 
     }
 
     public void wasteInCage() {
         wasteInCage += 5;
         cageCleanliness -= 5;
-    }
-
-    @Override
-    public void happiness() {
+       
     }
 
     @Override
@@ -63,8 +63,7 @@ public class OrganicDogs extends Organic implements Dogs {
             }
 
         }
-        this.wasteInCage += 2;
-        this.cageCleanliness -= 2;
+        wasteInCage();
         if (cageCleanliness - wasteInCage <= 15) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {

@@ -47,16 +47,9 @@ public class VirtualPetShelter {
             VirtualPet selectedPet = pets.get(counter);
             String thisSelectedPet = selectedPet.getPetName();
             if (thisSelectedPet.equalsIgnoreCase(petName))
-                selectedPet.playFetch();
+                selectedPet.playWithPet();
             counter++;
         }
-    }
-
-    public void playWithAll() {
-        for (VirtualPet pet : pets) {
-            pet.playFetch();
-        }
-
     }
 
     public void listPets() {
@@ -78,7 +71,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public void giveRobPetsOil() {
+    public void giveRoboPetsOil() {
         for (VirtualPet pet : pets)
             if (pet instanceof Robo) {
                 Robo organicPet = (Robo) pet;
@@ -96,26 +89,22 @@ public class VirtualPetShelter {
 
     public void cleanCages() {
         for (VirtualPet pet : pets)
-            if (pet instanceof OrganicDogs) {
-                OrganicDogs organicPet = (OrganicDogs) pet;
+            if (pet instanceof OrganicDog) {
+                OrganicDog organicPet = (OrganicDog) pet;
                 organicPet.cageCleanliness();
             }
     }
 
     public void cleanLitterBox() {
-        for (VirtualPet pet : pets)
-            if (pet instanceof OrganicCats) {
-                OrganicCats organicPet = (OrganicCats) pet;
-                organicPet.litterBoxCleanliness();
-            }
+        OrganicCat.cleanLitterBox();
     }
 
     public void walkAllDogs() {
         for (VirtualPet pet : pets) {
-            if (pet instanceof OrganicDogs) {
-                ((OrganicDogs) pet).goForWalk();
-            } else if (pet instanceof RoboDogs) {
-                ((RoboDogs) pet).goForWalk();
+            if (pet instanceof OrganicDog) {
+                ((OrganicDog) pet).goForWalk();
+            } else if (pet instanceof RoboDog) {
+                ((RoboDog) pet).goForWalk();
             }
         }
     }
@@ -131,23 +120,22 @@ public class VirtualPetShelter {
 
     public void showPets() {
         for (VirtualPet pet : pets) {
-            if (pet instanceof OrganicCats) {
+            if (pet instanceof OrganicCat) {
                 System.out.println(" Organic Cats");
                 System.out.println(pet.getPetName() + " :" + pet.getPetDescription() + " : Health " + pet.getPetHealth()
                         + " Happiness: " + pet.getHappinessLevel() + " Boredom: " + pet.getBoredomLevel()
                         + " Hunger: " + ((Organic) pet).getHungerLevel()
                         + " Thirst: " + ((Organic) pet).getThirstLevel()
-                        + " Waste in Litter Box: " + ((OrganicCats) pet).getWasteInLitterBox()
-                        + " Litter Box cleanliness: " + ((OrganicCats) pet).getLitterBoxCleanliness());
+                        + " Litter Box cleanliness: " + ((OrganicCat) pet).getLitterBoxCleanliness());
 
-            } else if (pet instanceof OrganicDogs) {
+            } else if (pet instanceof OrganicDog) {
                 System.out.println(" Organic Dog");
                 System.out.println(pet.getPetName() + ":" + pet.getPetDescription() + ": Health " + pet.getPetHealth()
                         + " Happiness: " + pet.getHappinessLevel() + " Boredom: " + pet.getBoredomLevel()
                         + " Hunger: " + ((Organic) pet).getHungerLevel()
                         + " Thirst: " + ((Organic) pet).getThirstLevel()
-                        + " Waste in Cages: " + ((OrganicDogs) pet).getWasteInCage()
-                        + " Cage cleanliness " + ((OrganicDogs) pet).getCageCleanliness());
+                        + " Waste in Cages: " + ((OrganicDog) pet).getWasteInCage()
+                        + " Cage cleanliness " + ((OrganicDog) pet).getCageCleanliness());
 
             } else if (pet instanceof Robo) {
                 System.out.println(" Robo Pets");

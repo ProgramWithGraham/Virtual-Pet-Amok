@@ -1,6 +1,6 @@
 package pets_amok;
 
-public interface Dogs {
+public interface Dog {
 
     public void cageCleanliness();
     }

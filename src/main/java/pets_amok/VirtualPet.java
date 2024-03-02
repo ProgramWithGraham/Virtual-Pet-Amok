@@ -10,20 +10,11 @@ public abstract class VirtualPet {
     public VirtualPet(String petName, String petDescription) {
         this.petName = petName;
         this.petDescription = petDescription;
-        this.petHealth = 85;
-        this.happinessLevel = 85;
-        this.boredomLevel = 75;
+        this.petHealth = 80;
+        this.happinessLevel = 75;
+        this.boredomLevel = 40;
 
     }
-
-    // public VirtualPet(String petName, String petDescription, int petHealth, int
-    // boredomLevel, int happinessLevel) {
-    // this.petName = petName;
-    // this.petDescription = petDescription;
-    // this.petHealth = petHealth;
-    // this.boredomLevel = boredomLevel;
-    // this.happinessLevel = happinessLevel;
-    // }
 
     public void printUserInstructions() {
         System.out.println(" ");
@@ -31,12 +22,13 @@ public abstract class VirtualPet {
         System.out.println(" 1. Give your Organic pets some Food");
         System.out.println(" 2. Give your Organic pets some Water");
         System.out.println(" 3. Give your Robo pets some oil");
-        System.out.println(" 4. Give your Robo pets some Water");
+        System.out.println(" 4. Repair your Robo pets and increase Maintenance level");
         System.out.println(" 5. Play with your a selected virtual pet");
         System.out.println(" 6. Adopt a pet");
         System.out.println(" 7. Admit a pet");
         System.out.println(" 8. Clean dog crates");
         System.out.println(" 9. Clean cat litter boxes");
+        System.out.println(" 10. Walk all Dogs, both Robo and Organic");
         System.out.println(" 0. End the program");
     }
 
@@ -72,21 +64,12 @@ public abstract class VirtualPet {
         this.boredomLevel = boredomLevel;
     }
 
-    public int playFetch() {
+    public void playWithPet() {
         this.boredomLevel += 10;
         this.happinessLevel += 10;
-        return this.boredomLevel + this.happinessLevel;
-
+        this.petHealth += 5;
     }
 
-    @Override
-    public String toString() {
-        String petDetails = this.petName + ", " + this.petDescription + " - stats are:  " + "  Boredom: "
-                + this.boredomLevel;
-        return petDetails;
-    }
-
-    public abstract void happiness();
 
     public abstract void tick();
 
