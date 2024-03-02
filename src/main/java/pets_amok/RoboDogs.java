@@ -10,15 +10,12 @@ public class RoboDogs extends Robo implements Dogs {
 
     public void goForWalk() {
         setHappinessLevel(getHappinessLevel() + 5);
-    }
+        setBoredomLevel(getBoredomLevel() - 5);    }
 
     @Override
     public void cageCleanliness() {
         System.out.println("Silly goose, RoboDogs don't use the bathroom");
     }
 
-    @Override
-    public void happiness() {
-    }
 
 }

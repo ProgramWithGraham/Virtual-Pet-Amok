@@ -11,48 +11,50 @@ public class VirtualPetShelterTest {
     @BeforeEach
     public void setup() {
         VirtualPetShelter omgPets = new VirtualPetShelter();
-        // OrganicDogs superPet = new OrganicDogs("Krypto", "The Super dog", 0);
-        RoboDogs superPet2 = new RoboDogs("Tommy", "Green Power dog", 0, 0, 0, 0, 0);
+        OrganicDogs superPet = new OrganicDogs("Krypto", "The Super Dog", 0, 0, 0, 0, 0, 0, 0);
+        RoboDogs superPet2 = new RoboDogs("Tommy", "Green Power Dog", 0, 0, 0, 0, 0);
         OrganicCats superPet3 = new OrganicCats("Kimberly", "Pink Power Dog", 0, 0, 0, 0, 0, 0, 0);
         RoboCats superPet4 = new RoboCats("Billy", "Blue Power Cat", 0, 0, 0, 0, 0);
 
-        // omgPets.addPet(superPet);
+        omgPets.addPet(superPet);
         omgPets.addPet(superPet2);
         omgPets.addPet(superPet3);
         omgPets.addPet(superPet4);
     }
 
     @Test
-    public void feedOrganic() {
+    public void testFeedOrganic() {
 
         omgPets.feedOrganic();
 
-        // assertEquals(85, Organic.getPets().get(0).getHungerLevel());
+        assertEquals(10, omgPets.getPets().get(0).getHungerLevel());
     }
 
     @Test
-    public void giveOrganicWater() {
+    public void testGiveOrganicWater() {
         omgPets.giveOrganicWater();
-        // assertEquals(85, omgPets.getPets().get(0).getThirstLevel());
+        assertEquals(10, omgPets.getPets().get(0).getThirstLevel());
     }
 
-    public void giveRobPetsOil() {
-
-    }
-
-    public void fixRoboPetsMaintenance() {
-
-    }
-
-    public void cleanCages() {
+    public void testGiveRoboPetsOil() {
+        omgPets.giveRoboPetsOil();
+        assertEquals(10, omgPets.getPets().get(0).getOilLevel());
 
     }
 
-    public void cleanLitterBox() {
+    public void testFixRoboPetsMaintenance() {
 
     }
 
-    public void walkAllDogs() {
+    public void testCleanCages() {
+
+    }
+
+    public void testCleanLitterBox() {
+
+    }
+
+    public void testWalkAllDogs() {
 
     }
 

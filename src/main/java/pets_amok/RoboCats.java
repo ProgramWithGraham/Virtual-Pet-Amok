@@ -7,8 +7,5 @@ public class RoboCats extends Robo implements Cats {
         super(petName, petDescription, happinessLevel, petHealth, boredomLevel, maintenance, oilLevel);
     }
 
-    @Override
-    public void happiness() {
-    }
 
 }

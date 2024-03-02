@@ -47,14 +47,14 @@ public class VirtualPetShelter {
             VirtualPet selectedPet = pets.get(counter);
             String thisSelectedPet = selectedPet.getPetName();
             if (thisSelectedPet.equalsIgnoreCase(petName))
-                selectedPet.playFetch();
+                selectedPet.playWithPet();
             counter++;
         }
     }
 
     public void playWithAll() {
         for (VirtualPet pet : pets) {
-            pet.playFetch();
+            pet.playWithPet();
         }
 
     }
@@ -78,7 +78,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public void giveRobPetsOil() {
+    public void giveRoboPetsOil() {
         for (VirtualPet pet : pets)
             if (pet instanceof Robo) {
                 Robo organicPet = (Robo) pet;
