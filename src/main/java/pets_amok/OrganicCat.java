@@ -26,7 +26,7 @@ public class OrganicCat extends Organic implements Cat {
     public void tick() {
         this.hungerLevel -= 2;
         this.thirstLevel -= 2;
-        setBoredomLevel(getBoredomLevel() - 2);
+        setBoredomLevel(getBoredomLevel() + 2);
         setHappinessLevel(getHappinessLevel() - 1);
         setPetHealth(getPetHealth() - 3);
         litterBoxCleanliness -= 5;
