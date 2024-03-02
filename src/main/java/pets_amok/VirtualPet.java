@@ -29,8 +29,7 @@ public abstract class VirtualPet {
         System.out.println(" 8. Clean dog crates");
         System.out.println(" 9. Clean cat litter boxes");
         System.out.println(" 10. Walk all Dogs, both Robo and Organic");
-        System.out.println(" 11. Play with your a selected virtual pet");
-        System.out.println(" 000. End the program");
+        System.out.println(" 0. End the program");
     }
 
     public String getPetName() {

@@ -1,13 +1,12 @@
 package pets_amok;
 
-public class OrganicDogs extends Organic implements Dogs {
+public class OrganicDog extends Organic implements Dog {
 
     private int wasteInCage;
     private int cageCleanliness;
 
-    public OrganicDogs(String petName, String petDescription, int hungerLevel, int thirstLevel, int happinessLevel,
-            int petHealth, int boredomLevel, int wasteInCage, int cageCleanliness) {
-        super(petName, petDescription, happinessLevel, petHealth, boredomLevel, hungerLevel, thirstLevel);
+    public OrganicDog(String petName, String petDescription) {
+        super(petName, petDescription);
         this.wasteInCage = 15;
         this.cageCleanliness = 80;
     }
@@ -29,9 +28,11 @@ public class OrganicDogs extends Organic implements Dogs {
     }
 
     public void goForWalk() {
-        this.wasteInCage -= 5;
+        this.wasteInCage -= 10;
         setHappinessLevel(getHappinessLevel() + 5);
         setBoredomLevel(getBoredomLevel() - 5);
+        setPetHealth(getPetHealth() + 5);
+
     }
 
     @Override
@@ -46,9 +47,7 @@ public class OrganicDogs extends Organic implements Dogs {
     public void wasteInCage() {
         wasteInCage += 5;
         cageCleanliness -= 5;
-        setBoredomLevel(getBoredomLevel() + 5);
-        setHappinessLevel(getHappinessLevel() - 5);
-        setPetHealth(getPetHealth() - 5);
+       
     }
 
     @Override

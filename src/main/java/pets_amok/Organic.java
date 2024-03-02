@@ -4,8 +4,7 @@ public abstract class Organic extends VirtualPet {
     protected int hungerLevel;
     protected int thirstLevel;
 
-    public Organic(String petName, String petDescription, int happinessLevel,
-            int petHealth, int boredomLevel, int hungerLevel, int thirstLevel) {
+    public Organic(String petName, String petDescription) {
         super(petName, petDescription);
         this.hungerLevel = 40;
         this.thirstLevel = 40;

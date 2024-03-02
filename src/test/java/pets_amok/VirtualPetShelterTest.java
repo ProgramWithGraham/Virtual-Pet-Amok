@@ -10,11 +10,11 @@ public class VirtualPetShelterTest {
 
     @BeforeEach
     public void setup() {
-        VirtualPetShelter omgPets = new VirtualPetShelter();
-        OrganicDogs superPet = new OrganicDogs("Krypto", "The Super Dog", 0, 0, 0, 0, 0, 0, 0);
-        RoboDogs superPet2 = new RoboDogs("Tommy", "Green Power Dog", 0, 0, 0, 0, 0);
-        OrganicCats superPet3 = new OrganicCats("Kimberly", "Pink Power Dog", 0, 0, 0, 0, 0, 0, 0);
-        RoboCats superPet4 = new RoboCats("Billy", "Blue Power Cat", 0, 0, 0, 0, 0);
+        omgPets = new VirtualPetShelter();
+        OrganicDog superPet = new OrganicDog("Krypto", "The Super Dog");
+        RoboDog superPet2 = new RoboDog("Tommy", "Green Power Dog");
+        OrganicCat superPet3 = new OrganicCat("Kimberly", "Pink Power Dog");
+        RoboCat superPet4 = new RoboCat("Billy", "Blue Power Cat");
 
         omgPets.addPet(superPet);
         omgPets.addPet(superPet2);
@@ -26,36 +26,51 @@ public class VirtualPetShelterTest {
     public void testFeedOrganic() {
 
         omgPets.feedOrganic();
+        Organic organicPet = (Organic) omgPets.getPets().get(0);
 
-        assertEquals(10, omgPets.getPets().get(0).getHungerLevel());
+        assertEquals(50, organicPet.getHungerLevel());
     }
 
     @Test
     public void testGiveOrganicWater() {
+
         omgPets.giveOrganicWater();
-        assertEquals(10, omgPets.getPets().get(0).getThirstLevel());
+        Organic organicPet = (Organic) omgPets.getPets().get(0);
+
+        assertEquals(50, organicPet.getThirstLevel());
     }
 
     public void testGiveRoboPetsOil() {
+
         omgPets.giveRoboPetsOil();
-        assertEquals(10, omgPets.getPets().get(0).getOilLevel());
+        RoboDog roboPet = (RoboDog) omgPets.getPets().get(1);
+
+        assertEquals(60, roboPet.getOilLevel());
 
     }
 
     public void testFixRoboPetsMaintenance() {
 
+        omgPets.fixRoboPetsMaintenance();
+        Robo roboPet = (Robo) omgPets.getPets().get(1);
+
+        assertEquals(60, roboPet.getMaintenance());
     }
 
     public void testCleanCages() {
 
+        omgPets.cleanCages();
+        OrganicDog organicPet = (OrganicDog) omgPets.getPets().get(0);
+
+        assertEquals(50, organicPet.getCageCleanliness());
     }
 
     public void testCleanLitterBox() {
 
-    }
+        omgPets.cleanLitterBox();
+        OrganicCat organicPet = (OrganicCat) omgPets.getPets().get(2);
 
-    public void testWalkAllDogs() {
-
+        assertEquals(100, organicPet.getLitterBoxCleanliness());
     }
 
 }

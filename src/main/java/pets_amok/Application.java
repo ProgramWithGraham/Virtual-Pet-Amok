@@ -11,10 +11,10 @@ public class Application {
         System.out.println(
                 "\n Welcome to the grand ole world of Virtual Pets. Your goal is to keep your pets satisfied. The higher the number the better your pet is doing. \n");
 
-        OrganicDogs superPet = new OrganicDogs("Krypto", "The Super Dog", 0, 0, 0, 0, 0, 0, 0);
-        OrganicCats superPet2 = new OrganicCats("Kimberly", "Pink Power Cat", 0, 0, 0, 0, 0, 0, 0);
-        RoboCats superPet3 = new RoboCats("Billy", "Blue Power Cat", 0, 0, 0, 0, 0);
-        RoboDogs superPet4 = new RoboDogs("Tommy", "Green Power Dog", 0, 0, 0, 0, 0);
+        OrganicDog superPet = new OrganicDog("Krypto", "The Super Dog");
+        OrganicCat superPet2 = new OrganicCat("Kimberly", "Pink Power Cat");
+        RoboCat superPet3 = new RoboCat("Billy", "Blue Power Cat");
+        RoboDog superPet4 = new RoboDog("Tommy", "Green Power Dog");
 
         omgPets.addPet(superPet);
         omgPets.addPet(superPet2);
@@ -54,36 +54,37 @@ public class Application {
             } else if (userInput == 7) { // This is to add a new pet per user's choice pet name and description
                 animals.nextLine();
                 System.out.println("\nWhat type of Pet are you admitting? ");
-                if (userInput == 1) {
-                    VirtualPet organicDog = new OrganicDogs(null, null, userInput, userInput, userInput, userInput, userInput, userInput, userInput);
-                    omgPets.addPet(organicDog);
-                } else if (userInput == 2){
-                    VirtualPet organicCat = new OrganicCats(null, null, userInput, userInput, userInput, userInput, userInput, userInput, userInput);
-                    omgPets.addPet(organicCat);
-                } else if (userInput == 3) {
-                    VirtualPet roboDog = new RoboDogs(null, null, userInput, userInput, userInput, userInput, userInput);
-                    omgPets.addPet(roboDog);
-                } else if (userInput == 4){
-                    VirtualPet roboCat = new RoboCats(null, null, userInput, userInput, userInput, userInput, userInput);
-                    omgPets.addPet(roboCat);
+                userInput = animals.nextInt();
+                animals.nextLine();
                 System.out.println("\nWhat name do you want your new pet to have?");
                 String namingThePet = animals.nextLine();
                 System.out.println("What is your description of your pet in three words?");
                 String describeThePet = animals.nextLine();
-                System.out.println(" You have admitted a pet.");
-                System.out.println("");
-
+                if (userInput == 1) {
+                    VirtualPet organicDog = new OrganicDog(namingThePet, describeThePet);
+                    omgPets.addPet(organicDog);
+                } else if (userInput == 2) {
+                    VirtualPet organicCat = new OrganicCat(namingThePet, describeThePet);
+                    omgPets.addPet(organicCat);
+                } else if (userInput == 3) {
+                    VirtualPet roboDog = new RoboDog(namingThePet, describeThePet);
+                    omgPets.addPet(roboDog);
+                } else if (userInput == 4) {
+                    VirtualPet roboCat = new RoboCat(namingThePet, describeThePet);
+                    omgPets.addPet(roboCat);
+                    System.out.println(" You have admitted a pet.");
+                    System.out.println("");
+                }
             } else if (userInput == 8) { // This is used to decrease the waste in cages
                 omgPets.cleanCages();
                 System.out.println("\nYou have cleaned up some of the waste in the dog cages.\n");
             } else if (userInput == 9) { // This is used to decrease the waste in the litter boxes
                 omgPets.cleanLitterBox();
                 System.out.println("\nYou have cleaned up some of the waste in the litter boxes.\n");
-            } else if (userInput == 10) { // This is used to increase the Maintenance levels for Robo pets
+            } else if (userInput == 10) { // This is used to increase the Happiness and Health, but decrease Boredom
+                                          // for Robo and Organic dogs
                 omgPets.walkAllDogs();
-            } else if (userInput == 11) { // This is used to increase the Maintenance levels for Robo pets
-                omgPets.playWithAll();
-            } else if (userInput == 000) { // End the program
+            } else if (userInput == 0) { // End the program
                 System.out.println("");
                 System.out.println(" Baby Come Back, I just can't live without you!\n");
                 System.out.println("");
@@ -111,5 +112,6 @@ public class Application {
             superPet.printUserInstructions();
         }
         animals.close();
+
     }
 }
