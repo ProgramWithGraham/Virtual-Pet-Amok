@@ -13,7 +13,6 @@ public abstract class VirtualPet {
         this.petHealth = 80;
         this.happinessLevel = 75;
         this.boredomLevel = 40;
-
     }
 
     public void printUserInstructions() {
@@ -70,9 +69,6 @@ public abstract class VirtualPet {
         this.petHealth += 5;
     }
 
-
-    public abstract void tick();
-
     public int getHappinessLevel() {
         return happinessLevel;
     }
@@ -80,5 +76,7 @@ public abstract class VirtualPet {
     public void setHappinessLevel(int happinessLevel) {
         this.happinessLevel = happinessLevel;
     }
+
+    public abstract void tick();
 
 }

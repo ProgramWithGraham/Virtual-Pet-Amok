@@ -4,7 +4,6 @@ public class RoboDog extends Robo implements Dog {
 
     public RoboDog(String petName, String petDescription) {
         super(petName, petDescription);
-
     }
 
     public void goForWalk() {

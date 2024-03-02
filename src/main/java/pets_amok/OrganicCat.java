@@ -28,12 +28,13 @@ public class OrganicCat extends Organic implements Cat {
         this.thirstLevel -= 2;
         setBoredomLevel(getBoredomLevel() - 2);
         setHappinessLevel(getHappinessLevel() - 1);
-        if (hungerLevel - thirstLevel >= 15) {
+        setPetHealth(getPetHealth() - 3);
+        litterBoxCleanliness -= 5;
+        if (litterBoxCleanliness <= 40) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {
                 setHappinessLevel(getHappinessLevel() - 10);
             }
         }
-        litterBoxCleanliness -= 5;
     }
 }

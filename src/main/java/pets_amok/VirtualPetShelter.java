@@ -127,7 +127,6 @@ public class VirtualPetShelter {
                         + " Hunger: " + ((Organic) pet).getHungerLevel()
                         + " Thirst: " + ((Organic) pet).getThirstLevel()
                         + " Litter Box cleanliness: " + ((OrganicCat) pet).getLitterBoxCleanliness());
-
             } else if (pet instanceof OrganicDog) {
                 System.out.println(" Organic Dog");
                 System.out.println(pet.getPetName() + ":" + pet.getPetDescription() + ": Health " + pet.getPetHealth()
@@ -136,7 +135,6 @@ public class VirtualPetShelter {
                         + " Thirst: " + ((Organic) pet).getThirstLevel()
                         + " Waste in Cages: " + ((OrganicDog) pet).getWasteInCage()
                         + " Cage cleanliness " + ((OrganicDog) pet).getCageCleanliness());
-
             } else if (pet instanceof Robo) {
                 System.out.println(" Robo Pets");
                 System.out.println(pet.getPetName() + " :" + pet.getPetDescription() + " : Health " + pet.getPetHealth()
