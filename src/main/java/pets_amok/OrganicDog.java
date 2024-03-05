@@ -32,36 +32,42 @@ public class OrganicDog extends Organic implements Dog {
         setHappinessLevel(getHappinessLevel() + 5);
         setBoredomLevel(getBoredomLevel() - 5);
         setPetHealth(getPetHealth() + 5);
-
     }
 
-    @Override
-    public void cageCleanliness() {
-        wasteInCage -= 20;
-        cageCleanliness += 40;
+    public void cleanCage() {
+        setCageCleanliness(100);
         setHappinessLevel(getHappinessLevel() + 5);
         setPetHealth(getPetHealth() + 5);
     }
 
-    public void wasteInCage() {
-        wasteInCage += 5;
-        cageCleanliness -= 5;
+    public void soilCage() {
+        this.wasteInCage += 5;
+        this.cageCleanliness -= 5;
     }
 
     @Override
     public void tick() {
+        super.tick();
         this.hungerLevel -= 2;
         this.thirstLevel -= 2;
-        setBoredomLevel(getBoredomLevel() - 2);
-        setHappinessLevel(getHappinessLevel() - 1);
-        setPetHealth(getPetHealth() - 3);
-        wasteInCage();
+        soilCage();
         if (cageCleanliness - wasteInCage <= 15) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {
                 setHappinessLevel(getHappinessLevel() - 10);
             }
         }
+        if (hungerLevel <= 40) {
+            setPetHealth(getPetHealth() - 25);
+            if (getPetHealth() < 65) {
+                setHappinessLevel(getHappinessLevel() - 10);
+            }
+        }
+        if (thirstLevel <= 40) {
+            setPetHealth(getPetHealth() - 25);
+            if (getPetHealth() < 65) {
+                setHappinessLevel(getHappinessLevel() - 10);
+            }
+        }
     }
-
 }
