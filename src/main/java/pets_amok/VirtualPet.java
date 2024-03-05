@@ -39,20 +39,28 @@ public abstract class VirtualPet {
         this.petName = petName;
     }
 
-    public int getPetHealth() {
-        return petHealth;
-    }
-
-    public void setPetHealth(int petHealth) {
-        this.petHealth = petHealth;
-    }
-
     public String getPetDescription() {
         return this.petDescription;
     }
 
     public void setPetDescription(String petDescription) {
         this.petDescription = petDescription;
+    }
+
+    public int getPetHealth() {
+        return this.petHealth;
+    }
+
+    public void setPetHealth(int petHealth) {
+        this.petHealth = petHealth;
+    }
+
+    public int getHappinessLevel() {
+        return this.happinessLevel;
+    }
+
+    public void setHappinessLevel(int happinessLevel) {
+        this.happinessLevel = happinessLevel;
     }
 
     public int getBoredomLevel() {
@@ -64,19 +72,14 @@ public abstract class VirtualPet {
     }
 
     public void playWithPet() {
-        this.boredomLevel += 10;
+        this.boredomLevel -= 10;
         this.happinessLevel += 10;
         this.petHealth += 5;
     }
 
-    public int getHappinessLevel() {
-        return happinessLevel;
+    public void tick() {
+        this.boredomLevel += 2;
+        this.happinessLevel -= 1;
+        this.petHealth -= 3;
     }
-
-    public void setHappinessLevel(int happinessLevel) {
-        this.happinessLevel = happinessLevel;
-    }
-
-    public abstract void tick();
-
 }

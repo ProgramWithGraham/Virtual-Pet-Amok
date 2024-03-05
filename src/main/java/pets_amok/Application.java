@@ -112,6 +112,5 @@ public class Application {
             superPet.printUserInstructions();
         }
         animals.close();
-
     }
 }

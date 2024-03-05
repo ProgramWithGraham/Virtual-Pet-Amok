@@ -8,7 +8,6 @@ public abstract class Organic extends VirtualPet {
         super(petName, petDescription);
         this.hungerLevel = 40;
         this.thirstLevel = 40;
-
     }
 
     public int getHungerLevel() {
@@ -32,7 +31,6 @@ public abstract class Organic extends VirtualPet {
         setBoredomLevel(getBoredomLevel() + 5);
         setHappinessLevel(getHappinessLevel() + 5);
         setPetHealth(getPetHealth() + 5);
-
         return this.hungerLevel;
     }
 
@@ -41,8 +39,6 @@ public abstract class Organic extends VirtualPet {
         setBoredomLevel(getBoredomLevel() + 5);
         setHappinessLevel(getHappinessLevel() + 5);
         setPetHealth(getPetHealth() + 5);
-
         return this.thirstLevel;
     }
-
 }

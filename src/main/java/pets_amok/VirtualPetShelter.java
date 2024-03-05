@@ -26,19 +26,21 @@ public class VirtualPetShelter {
     }
 
     public void feedOrganic() {
-        for (VirtualPet pet : pets)
+        for (VirtualPet pet : pets) {
             if (pet instanceof Organic) {
                 Organic organicPet = (Organic) pet;
                 organicPet.giveFood();
             }
+        }
     }
 
     public void giveOrganicWater() {
-        for (VirtualPet pet : pets)
+        for (VirtualPet pet : pets) {
             if (pet instanceof Organic) {
                 Organic organicPet = (Organic) pet;
                 organicPet.giveWater();
             }
+        }
     }
 
     public void playWithSelectedPet(String petName) {
@@ -72,27 +74,30 @@ public class VirtualPetShelter {
     }
 
     public void giveRoboPetsOil() {
-        for (VirtualPet pet : pets)
+        for (VirtualPet pet : pets) {
             if (pet instanceof Robo) {
-                Robo organicPet = (Robo) pet;
-                organicPet.giveOil();
+                Robo roboPet = (Robo) pet;
+                roboPet.giveOil();
             }
+        }
     }
 
     public void fixRoboPetsMaintenance() {
-        for (VirtualPet pet : pets)
+        for (VirtualPet pet : pets) {
             if (pet instanceof Robo) {
-                Robo organicPet = (Robo) pet;
-                organicPet.improveMaintenance();
+                Robo roboPet = (Robo) pet;
+                roboPet.improveMaintenance();
             }
+        }
     }
 
     public void cleanCages() {
-        for (VirtualPet pet : pets)
+        for (VirtualPet pet : pets) {
             if (pet instanceof OrganicDog) {
                 OrganicDog organicPet = (OrganicDog) pet;
-                organicPet.cageCleanliness();
+                organicPet.cleanCage();
             }
+        }
     }
 
     public void cleanLitterBox() {
@@ -110,12 +115,13 @@ public class VirtualPetShelter {
     }
 
     public void tickAllPets() {
-        for (VirtualPet pet : pets)
+        for (VirtualPet pet : pets) {
             if (pet instanceof Organic) {
                 ((Organic) pet).tick();
             } else if (pet instanceof Robo) {
                 ((Robo) pet).tick();
             }
+        }
     }
 
     public void showPets() {
@@ -141,11 +147,7 @@ public class VirtualPetShelter {
                         + " Happiness: " + pet.getHappinessLevel() + " Boredom: " + pet.getBoredomLevel()
                         + " Maintenance: " + ((Robo) pet).getMaintenance()
                         + " Oil level: " + ((Robo) pet).getOilLevel());
-
             }
-
         }
-
     }
-
 }

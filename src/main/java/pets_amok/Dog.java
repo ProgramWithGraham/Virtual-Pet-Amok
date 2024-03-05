@@ -2,7 +2,5 @@ package pets_amok;
 
 public interface Dog {
 
-    public void cageCleanliness();
-    }
-
-
+    public void goForWalk();
+}
