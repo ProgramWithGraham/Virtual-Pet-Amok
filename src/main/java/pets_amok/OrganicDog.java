@@ -1,7 +1,6 @@
 package pets_amok;
 
 public class OrganicDog extends Organic implements Dog {
-
     private int wasteInCage;
     private int cageCleanliness;
 
@@ -51,19 +50,21 @@ public class OrganicDog extends Organic implements Dog {
         this.hungerLevel -= 2;
         this.thirstLevel -= 2;
         soilCage();
-        if (cageCleanliness - wasteInCage <= 15) {
+        if (this.cageCleanliness - this.wasteInCage <= 15) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {
                 setHappinessLevel(getHappinessLevel() - 10);
             }
         }
-        if (hungerLevel <= 40) {
+
+        if (this.hungerLevel <= 40) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {
                 setHappinessLevel(getHappinessLevel() - 10);
             }
         }
-        if (thirstLevel <= 40) {
+
+        if (this.thirstLevel <= 40) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {
                 setHappinessLevel(getHappinessLevel() - 10);

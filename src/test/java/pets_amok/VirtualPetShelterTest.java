@@ -24,57 +24,43 @@ public class VirtualPetShelterTest {
 
     @Test
     public void testFeedOrganic() {
-
         omgPets.feedOrganic();
         Organic organicPet = (Organic) omgPets.getPets().get(0);
-
         assertEquals(50, organicPet.getHungerLevel());
     }
 
     @Test
     public void testGiveOrganicWater() {
-
         omgPets.giveOrganicWater();
         Organic organicPet = (Organic) omgPets.getPets().get(0);
-
         assertEquals(50, organicPet.getThirstLevel());
     }
 
     @Test
     public void testGiveRoboPetsOil() {
-
         omgPets.giveRoboPetsOil();
         Robo roboPet = (Robo) omgPets.getPets().get(1);
-
         assertEquals(90, roboPet.getOilLevel());
-
     }
 
     @Test
     public void testFixRoboPetsMaintenance() {
-
         omgPets.fixRoboPetsMaintenance();
         Robo roboPet = (Robo) omgPets.getPets().get(1);
-
         assertEquals(90, roboPet.getMaintenance());
     }
 
     @Test
     public void testCleanCages() {
-
         omgPets.cleanCages();
         OrganicDog organicPet = (OrganicDog) omgPets.getPets().get(0);
-
         assertEquals(100, organicPet.getCageCleanliness());
     }
 
     @Test
     public void testCleanLitterBox() {
-
         omgPets.cleanLitterBox();
         OrganicCat organicPet = (OrganicCat) omgPets.getPets().get(2);
-
         assertEquals(100, organicPet.getLitterBoxCleanliness());
     }
-
 }

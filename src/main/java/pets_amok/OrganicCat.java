@@ -1,7 +1,6 @@
 package pets_amok;
 
 public class OrganicCat extends Organic implements Cat {
-
     private static int litterBoxCleanliness;
 
     public OrganicCat(String petName, String petDescription) {
@@ -33,13 +32,15 @@ public class OrganicCat extends Organic implements Cat {
                 setHappinessLevel(getHappinessLevel() - 10);
             }
         }
-        if (hungerLevel <= 40) {
+        
+        if (this.hungerLevel <= 40) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {
                 setHappinessLevel(getHappinessLevel() - 10);
             }
         }
-        if (thirstLevel <= 40) {
+
+        if (this.thirstLevel <= 40) {
             setPetHealth(getPetHealth() - 25);
             if (getPetHealth() < 65) {
                 setHappinessLevel(getHappinessLevel() - 10);
