@@ -1,8 +1,8 @@
 package pets_amok;
 
 public class OrganicDog extends Organic implements Dog {
-    private int wasteInCage;
-    private int cageCleanliness;
+    protected int wasteInCage;
+    protected int cageCleanliness;
 
     public OrganicDog(String petName, String petDescription) {
         super(petName, petDescription);
@@ -27,16 +27,17 @@ public class OrganicDog extends Organic implements Dog {
     }
 
     public void goForWalk() {
+        this.petHealth += 5;
+        this.happinessLevel += 5;
+        this.boredomLevel -= 5;
         this.wasteInCage -= 10;
-        setHappinessLevel(getHappinessLevel() + 5);
-        setBoredomLevel(getBoredomLevel() - 5);
-        setPetHealth(getPetHealth() + 5);
     }
 
     public void cleanCage() {
-        setCageCleanliness(100);
-        setHappinessLevel(getHappinessLevel() + 5);
-        setPetHealth(getPetHealth() + 5);
+        this.petHealth += 5;
+        this.happinessLevel += 5;
+        this.wasteInCage = 0;
+        this.cageCleanliness = 100;
     }
 
     public void soilCage() {
@@ -47,27 +48,25 @@ public class OrganicDog extends Organic implements Dog {
     @Override
     public void tick() {
         super.tick();
-        this.hungerLevel -= 2;
-        this.thirstLevel -= 2;
         soilCage();
         if (this.cageCleanliness - this.wasteInCage <= 15) {
-            setPetHealth(getPetHealth() - 25);
+            this.petHealth -= 25;
             if (getPetHealth() < 65) {
-                setHappinessLevel(getHappinessLevel() - 10);
+                this.happinessLevel -= 10;
             }
         }
 
-        if (this.hungerLevel <= 40) {
-            setPetHealth(getPetHealth() - 25);
+        if (this.hungerLevel <= 30) {
+            this.petHealth -= 25;
             if (getPetHealth() < 65) {
-                setHappinessLevel(getHappinessLevel() - 10);
+                this.happinessLevel -= 10;
             }
         }
 
-        if (this.thirstLevel <= 40) {
-            setPetHealth(getPetHealth() - 25);
+        if (this.thirstLevel <= 30) {
+            this.petHealth -= 25;
             if (getPetHealth() < 65) {
-                setHappinessLevel(getHappinessLevel() - 10);
+                this.happinessLevel -= 10;
             }
         }
     }

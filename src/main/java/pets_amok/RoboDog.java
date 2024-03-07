@@ -7,8 +7,8 @@ public class RoboDog extends Robo implements Dog {
     }
 
     public void goForWalk() {
-        setHappinessLevel(getHappinessLevel() + 5);
-        setBoredomLevel(getBoredomLevel() - 5);
-        setPetHealth(getPetHealth() + 5);
+        this.petHealth += 5;
+        this.happinessLevel += 5;
+        this.boredomLevel -= 5;
     }
 }
