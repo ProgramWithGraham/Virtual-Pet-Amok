@@ -33,14 +33,14 @@ public class OrganicDog extends Organic implements Dog {
         this.wasteInCage -= 10;
     }
 
-    public void cleanCage() {
+    public void cleanCage() { // Cleans Cages, resetting Waste and CageCleanliness
         this.petHealth += 5;
         this.happinessLevel += 5;
-        this.wasteInCage = 0;
-        this.cageCleanliness = 100;
+        this.wasteInCage = -5; // set at -5 so that when tick hits, level will start at 0
+        this.cageCleanliness = 105; // set to 105 so that when tick hits, this will start at 100
     }
 
-    public void soilCage() {
+    public void soilCage() { // variables hit when Tick is hit
         this.wasteInCage += 5;
         this.cageCleanliness -= 5;
     }
@@ -51,9 +51,6 @@ public class OrganicDog extends Organic implements Dog {
         soilCage();
         if (this.cageCleanliness - this.wasteInCage <= 15) {
             this.petHealth -= 25;
-            if (getPetHealth() < 65) {
-                this.happinessLevel -= 10;
-            }
         }
     }
 }

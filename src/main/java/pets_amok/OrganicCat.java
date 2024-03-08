@@ -17,7 +17,7 @@ public class OrganicCat extends Organic implements Cat {
     }
 
     public static void cleanLitterBox() {
-        setLitterBoxCleanliness(100);
+        setLitterBoxCleanliness(105); // set to 105 so that when tick hits, this will start at 100
     }
 
     @Override
@@ -26,9 +26,6 @@ public class OrganicCat extends Organic implements Cat {
         litterBoxCleanliness -= 5;
         if (litterBoxCleanliness <= 50) {
             this.petHealth -= 25;
-            if (getPetHealth() < 65) {
-                this.happinessLevel -= 10;
-            }
         }
     }
 }

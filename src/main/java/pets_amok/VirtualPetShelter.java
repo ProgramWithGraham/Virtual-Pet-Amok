@@ -21,11 +21,11 @@ public class VirtualPetShelter {
         this.pets = pets;
     }
 
-    public void addPet(VirtualPet addedPet) {
+    public void addPet(VirtualPet addedPet) { // add addition pets
         this.pets.add(addedPet);
     }
 
-    public void feedOrganic() {
+    public void feedOrganic() { // feed only Organic type pets
         for (VirtualPet pet : pets) {
             if (pet instanceof Organic) {
                 Organic organicPet = (Organic) pet;
@@ -34,7 +34,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public void giveOrganicWater() {
+    public void giveOrganicWater() { // give Water to only Organic pets
         for (VirtualPet pet : pets) {
             if (pet instanceof Organic) {
                 Organic organicPet = (Organic) pet;
@@ -43,6 +43,8 @@ public class VirtualPetShelter {
         }
     }
 
+    // Play with a selected pet and only have their stats improved before tick,
+    // other pets will only get hit by tick with no improvements
     public void playWithSelectedPet(String petName) {
         int counter = 0;
         while (counter < pets.size()) {
@@ -54,13 +56,13 @@ public class VirtualPetShelter {
         }
     }
 
-    public void listPets() {
+    public void listPets() { // Shows a list of current pets with description
         for (VirtualPet pet : pets) {
             System.out.println(pet.getPetName() + " " + pet.getPetDescription());
         }
     }
 
-    public void removePet(String petToRemove) {
+    public void removePet(String petToRemove) { // Remove a single named pet
         int counter = 0;
         while (counter < pets.size()) {
             VirtualPet petAtThisIndex = pets.get(counter);
@@ -73,7 +75,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public void giveRoboPetsOil() {
+    public void giveRoboPetsOil() { // give only Robo pets oil
         for (VirtualPet pet : pets) {
             if (pet instanceof Robo) {
                 Robo roboPet = (Robo) pet;
@@ -82,7 +84,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public void fixRoboPetsMaintenance() {
+    public void fixRoboPetsMaintenance() { // give only Robo pets maintenance
         for (VirtualPet pet : pets) {
             if (pet instanceof Robo) {
                 Robo roboPet = (Robo) pet;
@@ -91,7 +93,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public void cleanCages() {
+    public void cleanCages() { // Clean dog Cages to 105, but will go to 100 after tick
         for (VirtualPet pet : pets) {
             if (pet instanceof OrganicDog) {
                 OrganicDog organicPet = (OrganicDog) pet;
@@ -100,11 +102,11 @@ public class VirtualPetShelter {
         }
     }
 
-    public void cleanLitterBox() {
+    public void cleanLitterBox() { // Clean litter boxes to 105, but will go to 100 after tick
         OrganicCat.cleanLitterBox();
     }
 
-    public void walkAllDogs() {
+    public void walkAllDogs() { // Walk only Robo and Organic dogs
         for (VirtualPet pet : pets) {
             if (pet instanceof OrganicDog) {
                 ((OrganicDog) pet).goForWalk();
@@ -114,7 +116,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public void tickAllPets() {
+    public void tickAllPets() { // All types hit their respective ticks
         for (VirtualPet pet : pets) {
             if (pet instanceof Organic) {
                 ((Organic) pet).tick();
@@ -124,7 +126,7 @@ public class VirtualPetShelter {
         }
     }
 
-    public void showPets() {
+    public void showPets() { // Shows pets by type with name, description and stats
         for (VirtualPet pet : pets) {
             if (pet instanceof OrganicCat) {
                 System.out.println(" Organic Cats");
