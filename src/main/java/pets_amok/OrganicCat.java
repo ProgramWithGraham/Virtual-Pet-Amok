@@ -30,19 +30,5 @@ public class OrganicCat extends Organic implements Cat {
                 this.happinessLevel -= 10;
             }
         }
-
-        if (this.hungerLevel <= 30) {
-            this.petHealth -= 25;
-            if (getPetHealth() < 65) {
-                this.happinessLevel -= 10;
-            }
-        }
-
-        if (this.thirstLevel <= 30) {
-            this.petHealth -= 25;
-            if (getPetHealth() < 65) {
-                this.happinessLevel -= 10;
-            }
-        }
     }
 }

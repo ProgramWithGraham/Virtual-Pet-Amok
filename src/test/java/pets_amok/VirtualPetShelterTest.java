@@ -26,14 +26,14 @@ public class VirtualPetShelterTest {
     public void testFeedOrganic() {
         omgPets.feedOrganic();
         Organic organicPet = (Organic) omgPets.getPets().get(0);
-        assertEquals(50, organicPet.getHungerLevel());
+        assertEquals(60, organicPet.getHungerLevel());
     }
 
     @Test
     public void testGiveOrganicWater() {
         omgPets.giveOrganicWater();
         Organic organicPet = (Organic) omgPets.getPets().get(0);
-        assertEquals(50, organicPet.getThirstLevel());
+        assertEquals(60, organicPet.getThirstLevel());
     }
 
     @Test

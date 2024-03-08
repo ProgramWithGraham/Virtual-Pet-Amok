@@ -46,5 +46,18 @@ public abstract class Organic extends VirtualPet {
         super.tick();
         this.hungerLevel -= 2;
         this.thirstLevel -= 2;
+        if (this.hungerLevel <= 70) {
+            this.petHealth -= 25;
+            if (getPetHealth() < 65) {
+                this.happinessLevel -= 10;
+            }
+        }
+
+        if (this.thirstLevel <= 30) {
+            this.petHealth -= 25;
+            if (getPetHealth() < 65) {
+                this.happinessLevel -= 10;
+            }
+        }
     }
 }
