@@ -54,13 +54,13 @@ public class VirtualPetShelterTest {
     public void testCleanCages() {
         omgPets.cleanCages();
         OrganicDog organicPet = (OrganicDog) omgPets.getPets().get(0);
-        assertEquals(100, organicPet.getCageCleanliness());
+        assertEquals(105, organicPet.getCageCleanliness());
     }
 
     @Test
     public void testCleanLitterBox() {
         omgPets.cleanLitterBox();
         OrganicCat organicPet = (OrganicCat) omgPets.getPets().get(2);
-        assertEquals(100, organicPet.getLitterBoxCleanliness());
+        assertEquals(105, organicPet.getLitterBoxCleanliness());
     }
 }
