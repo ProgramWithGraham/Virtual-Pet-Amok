@@ -53,7 +53,7 @@ public class Application {
                 omgPets.removePet(petToRemove);
             } else if (userInput == 7) { // This is to add a new pet per user's choice pet name and description
                 animals.nextLine();
-                System.out.println("\nWhat type of Pet are you admitting? ");
+                System.out.println("\nWhat type of Pet are you admitting? Please only enter Robo or Organic");
                 userInput = animals.nextInt();
                 animals.nextLine();
                 System.out.println("\nWhat name do you want your new pet to have?");

@@ -47,18 +47,12 @@ public abstract class Robo extends VirtualPet {
         super.tick();
         this.oilLevel -= 2;
         this.maintenance -= 2;
-        if (this.oilLevel <= 30) {
+        if (this.oilLevel <= 80) {
             this.petHealth -= 25;
-            if (getPetHealth() < 65) {
-                this.happinessLevel -= 10;
-            }
         }
 
         if (this.maintenance <= 30) {
             this.petHealth -= 25;
-            if (getPetHealth() < 65) {
-                this.happinessLevel -= 10;
-            }
         }
     }
 }

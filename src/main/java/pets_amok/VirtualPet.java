@@ -61,10 +61,13 @@ public abstract class VirtualPet {
         this.petHealth += 5;
     }
 
-    public void tick() {
+    public void tick() { // Tick that all types of pets are hit with
         this.boredomLevel += 2;
         this.happinessLevel -= 1;
         this.petHealth -= 3;
+        if (getPetHealth() < 45) {
+            this.happinessLevel -= 10;
+        }
     }
 
     public void printUserInstructions() {
