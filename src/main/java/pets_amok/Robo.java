@@ -1,8 +1,8 @@
 package pets_amok;
 
 public abstract class Robo extends VirtualPet {
-    private int maintenance;
-    private int oilLevel;
+    protected int maintenance;
+    protected int oilLevel;
 
     public Robo(String petName, String petDescription) {
         super(petName, petDescription);
@@ -27,18 +27,18 @@ public abstract class Robo extends VirtualPet {
     }
 
     public int giveOil() {
+        this.petHealth += 5;
+        this.happinessLevel += 5;
+        this.boredomLevel -= 5;
         this.oilLevel += 10;
-        setBoredomLevel(getBoredomLevel() - 5);
-        setHappinessLevel(getHappinessLevel() + 5);
-        setPetHealth(getPetHealth() + 3);
         return this.oilLevel;
     }
 
     public int improveMaintenance() {
+        this.petHealth += 5;
+        this.happinessLevel += 5;
+        this.boredomLevel -= 5;
         this.maintenance += 10;
-        setBoredomLevel(getBoredomLevel() - 5);
-        setHappinessLevel(getHappinessLevel() + 5);
-        setPetHealth(getPetHealth() + 3);
         return this.maintenance;
     }
 
@@ -47,16 +47,17 @@ public abstract class Robo extends VirtualPet {
         super.tick();
         this.oilLevel -= 2;
         this.maintenance -= 2;
-        if (oilLevel <= 40) {
-            setPetHealth(getPetHealth() - 25);
+        if (this.oilLevel <= 30) {
+            this.petHealth -= 25;
             if (getPetHealth() < 65) {
-                setHappinessLevel(getHappinessLevel() - 10);
+                this.happinessLevel -= 10;
             }
         }
-        if (maintenance <= 40) {
-            setPetHealth(getPetHealth() - 25);
+
+        if (this.maintenance <= 30) {
+            this.petHealth -= 25;
             if (getPetHealth() < 65) {
-                setHappinessLevel(getHappinessLevel() - 10);
+                this.happinessLevel -= 10;
             }
         }
     }

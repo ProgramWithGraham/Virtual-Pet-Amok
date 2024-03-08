@@ -77,12 +77,13 @@ public class Application {
                 }
             } else if (userInput == 8) { // This is used to decrease the waste in cages
                 omgPets.cleanCages();
-                System.out.println("\nYou have cleaned up some of the waste in the dog cages.\n");
+                System.out.println("\nYou have cleaned up all of the waste in the dog cages.\n");
             } else if (userInput == 9) { // This is used to decrease the waste in the litter boxes
                 omgPets.cleanLitterBox();
-                System.out.println("\nYou have cleaned up some of the waste in the litter boxes.\n");
+                System.out.println("\nYou have cleaned up all the waste in the litter boxes.\n");
             } else if (userInput == 10) { // This is used to increase the Happiness and Health, but decrease Boredom
                                           // for Robo and Organic dogs
+                System.out.println("\nYou have walked all the dogs.\n");
                 omgPets.walkAllDogs();
             } else if (userInput == 0) { // End the program
                 System.out.println("");
